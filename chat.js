@@ -16,7 +16,7 @@ function monster(){
       this.slowed = false;
       this.ownSlow = false;
     }
-var begin = false;
+
 var monsters ={};
 var daggerThrown = [];
 var tabMonster = [];
@@ -31,10 +31,8 @@ var socket = io.connect();
 		socket.username = prompt("What's your name?");
 		socket.emit('adduser', socket.username);
 		//console.log(socket.username);
-		begin = true;
-		var game = new GF();
-      	game.start();
-
+		
+		
 	});
 	
 	 socket.on('update_position', function (data,data2) {

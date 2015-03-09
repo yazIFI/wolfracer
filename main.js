@@ -1,10 +1,12 @@
 // Inits
 
 
-//window.onload = function init() {
+window.onload = function init() {
 
-          
-//};
+          var game = new GF();
+          game.start();
+
+};
 
  // vars for handling inputs
     var inputStates = {};
