@@ -69,8 +69,8 @@ io.sockets.on('connection', function (socket) {
 		socket.emit('updatechat', 'SERVER', 'you have connected to room1');
 		// echo to room 1 that a person has connected to their room
 		
-		//console.log("new user : " + username);
-		//console.log("new monster : " + monsters[username].speed);
+		console.log("new user : " + username);
+		console.log("new monster : " + monsters[username].speed);
 		socket.broadcast.to('room1').emit('updatechat', 'SERVER', username + ' has connected to this room');
 		socket.emit('updaterooms', rooms, 'room1');
 	});
