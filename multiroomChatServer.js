@@ -58,7 +58,7 @@ io.sockets.on('connection', function (socket) {
 		socket.username = username;
 		usernames[username] = username;
 		monsters[username] = new monster();
-		socket.emit('update_position', monsters,daggerThrown);
+		socket.emit('update_position', monsters[socket.username],daggerThrown,socket.username);
 		// store the room name in the socket session for this client
 		socket.room = 'room1';
 		// add the client's username to the global list
@@ -69,16 +69,16 @@ io.sockets.on('connection', function (socket) {
 		socket.emit('updatechat', 'SERVER', 'you have connected to room1');
 		// echo to room 1 that a person has connected to their room
 		
-		console.log("new user : " + username);
-		console.log("new monster : " + monsters[username].speed);
+		//console.log("new user : " + username);
+		//console.log("new monster : " + monsters[username].speed);
 		socket.broadcast.to('room1').emit('updatechat', 'SERVER', username + ' has connected to this room');
 		socket.emit('updaterooms', rooms, 'room1');
 	});
 
-	socket.on('receive_position', function (data,data2) {
-     monsters = data;
+	socket.on('receive_position', function (data,data2,data3) {
+     monsters[data3] = data;
      daggerThrown = data2;
-     socket.broadcast.emit('update_position', data,data2); // send `data` to all other clients
+     socket.broadcast.emit('update_position', data,data2,data3); // send `data` to all other clients
   });
 	
 	// when the client emits 'sendchat', this listens and executes

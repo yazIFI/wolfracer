@@ -312,7 +312,7 @@ var GF = function(){
             || monsters[socket.username].jump || monsters[socket.username].onground == false 
             || (daggerThrown.length != 0))
           {
-            socket.emit('receive_position', monsters,daggerThrown);
+            socket.emit('receive_position', monsters[socket.username],daggerThrown,socket.username);
           }
           break;
         case etats.gameOver:

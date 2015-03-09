@@ -35,9 +35,10 @@ var socket = io.connect();
 		
 	});
 	
-	 socket.on('update_position', function (data,data2) {
-      monsters=data;
+	 socket.on('update_position', function (data,data2,data3) {
+      monsters[data3]=data;
       daggerThrown = data2;
+
      
     });
 	
