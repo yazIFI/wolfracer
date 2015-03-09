@@ -51,21 +51,18 @@ var rooms = ['room1','room2','room3'];
 io.sockets.on('connection', function (socket) {
 	
 	
-	socket.on('receive_position', function (data,data2) {
-     monsters = data;
-     daggerThrown = data2;
-     socket.broadcast.emit('update_position', data,data2); // send `data` to all other clients
-  });
+	
 	// when the client emits 'adduser', this listens and executes
 	socket.on('adduser', function(username){
 		// store the username in the socket session for this client
 		socket.username = username;
-		// store the room name in the socket session for this client
-		socket.room = 'room1';
-		// add the client's username to the global list
 		usernames[username] = username;
 		monsters[username] = new monster();
 		socket.emit('update_position', monsters,daggerThrown);
+		// store the room name in the socket session for this client
+		socket.room = 'room1';
+		// add the client's username to the global list
+		
 		// send client to room 1
 		socket.join('room1');
 		// echo to client they've connected
@@ -77,6 +74,12 @@ io.sockets.on('connection', function (socket) {
 		socket.broadcast.to('room1').emit('updatechat', 'SERVER', username + ' has connected to this room');
 		socket.emit('updaterooms', rooms, 'room1');
 	});
+
+	socket.on('receive_position', function (data,data2) {
+     monsters = data;
+     daggerThrown = data2;
+     socket.broadcast.emit('update_position', data,data2); // send `data` to all other clients
+  });
 	
 	// when the client emits 'sendchat', this listens and executes
 	socket.on('sendchat', function (data) {
