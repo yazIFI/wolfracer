@@ -1,4 +1,6 @@
 scrollImg.onload = loadImage;
+var imgWidth;
+var imgHeight;
 //on recupere la largeur et hauteur de l'img chargé
 function loadImage()
 {

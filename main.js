@@ -221,16 +221,27 @@ var GF = function(){
 
       switch(etatCourant) {
         case etats.menuPrincipal:
-          //console.log("GAME OVER");
-          ctx.fillText("Runner", 100, 100);
-          ctx.fillText("Press Enter to begin to play", 100, 150);
-          
-          if(inputStates.enter) {
-            //console.log("game begin");
-            //createBalls(4);
-            //monsters[socket.username].dead = false;
-            etatCourant = etats.jeuEnCours;
-
+          if(monsters[socket.username] == undefined || imgWidth == undefined || imgHeight == undefined ||
+           w == undefined || h == undefined )
+          {
+            clearCanvas();
+            ctx.fillText("Wolf Racer", 100, 100);
+            ctx.fillText("Loading resources,please wait.", 100, 150);
+          }
+          else
+          {
+            clearCanvas();
+            //console.log("GAME OVER");
+            ctx.fillText("Runner", 100, 100);
+            ctx.fillText("Press Enter to begin to play", 100, 150);
+            
+            if(inputStates.enter) 
+            {
+              //console.log("game begin");
+              //createBalls(4);
+              //monsters[socket.username].dead = false;
+              etatCourant = etats.jeuEnCours;
+            }
           }
           break;
 
