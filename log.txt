@@ -1,0 +1,103 @@
+2015-03-06T18:30:32.332881+00:00 heroku[router]: at=info method=GET path="/character.js" host=pure-temple-6512.herokuapp.com request_id=a27a04e4-cf4b-4cc7-81fc-5b73846ac1b4 fwd="46.193.65.65" dyno=web.1 connect=5001ms service=6ms status=200 bytes=4928
+2015-03-06T18:30:32.492423+00:00 heroku[router]: at=info method=GET path="/walkingR.png" host=pure-temple-6512.herokuapp.com request_id=cbaaf1d3-193f-4b0f-9b44-3ccbd978446b fwd="46.193.65.65" dyno=web.1 connect=1ms service=33ms status=200 bytes=651953
+2015-03-06T18:30:33.850631+00:00 heroku[router]: at=info method=GET path="/standingL.png" host=pure-temple-6512.herokuapp.com request_id=ac218800-badf-4391-a2ab-8fe6fd18439b fwd="46.193.65.65" dyno=web.1 connect=1ms service=9ms status=200 bytes=147918
+2015-03-06T18:30:34.140615+00:00 heroku[router]: at=info method=GET path="/walkingR2.png" host=pure-temple-6512.herokuapp.com request_id=16301f42-b5d5-451b-b064-7fd024097426 fwd="46.193.65.65" dyno=web.1 connect=4ms service=26ms status=200 bytes=645798
+2015-03-06T18:30:34.525013+00:00 heroku[router]: at=info method=GET path="/walkingL2.png" host=pure-temple-6512.herokuapp.com request_id=60f69a4e-a1ee-4d23-8651-8a6dbf9d511e fwd="46.193.65.65" dyno=web.1 connect=1ms service=29ms status=200 bytes=647300
+2015-03-06T18:30:39.476216+00:00 heroku[router]: at=info method=GET path="/standingR.png" host=pure-temple-6512.herokuapp.com request_id=c2a9a68f-0925-4fb7-830c-2c2c35bf9397 fwd="46.193.65.65" dyno=web.1 connect=5000ms service=19ms status=200 bytes=149481
+2015-03-06T18:30:41.701363+00:00 heroku[router]: at=info method=GET path="/standingR2.png" host=pure-temple-6512.herokuapp.com request_id=8b4824bc-a228-403d-887e-5696909aec97 fwd="46.193.65.65" dyno=web.1 connect=5000ms service=9ms status=200 bytes=148873
+2015-03-06T18:30:42.532877+00:00 heroku[router]: at=info method=GET path="/walkingL.png" host=pure-temple-6512.herokuapp.com request_id=ca2d02af-ed79-4899-881c-ae6c9362fc64 fwd="46.193.65.65" dyno=web.1 connect=5002ms service=57ms status=200 bytes=655659
+2015-03-06T18:30:44.395122+00:00 heroku[router]: at=info method=GET path="/standingL2.png" host=pure-temple-6512.herokuapp.com request_id=3323bcd2-8fa6-4615-a6b7-f283ffb9a068 fwd="46.193.65.65" dyno=web.1 connect=5002ms service=8ms status=200 bytes=147206
+2015-03-06T18:32:01.101074+00:00 heroku[api]: Release v64 created by kvothewise@gmail.com
+2015-03-06T18:32:01.101074+00:00 heroku[api]: Deploy a613e63 by kvothewise@gmail.com
+2015-03-06T18:32:01.346073+00:00 heroku[web.1]: State changed from up to starting
+2015-03-06T18:32:03.523387+00:00 heroku[web.1]: Starting process with command `node multiroomChatServer.js`
+2015-03-06T18:32:04.181992+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-03-06T18:32:05.135374+00:00 app[web.1]: Recommending WEB_CONCURRENCY=1
+2015-03-06T18:32:05.135357+00:00 app[web.1]: Detected 512 MB available memory, 512 MB limit per process (WEB_MEMORY)
+2015-03-06T18:32:05.537894+00:00 app[web.1]: Node app is running at localhost:32615
+2015-03-06T18:32:05.755504+00:00 heroku[web.1]: Process exited with status 143
+2015-03-06T18:32:05.803143+00:00 heroku[web.1]: State changed from starting to up
+2015-03-06T18:32:18.339946+00:00 heroku[router]: at=info method=GET path="/" host=pure-temple-6512.herokuapp.com request_id=b84eff00-5dda-4054-a207-b639be300238 fwd="46.193.65.65" dyno=web.1 connect=6ms service=21ms status=200 bytes=1654
+2015-03-06T18:32:18.641843+00:00 heroku[router]: at=info method=GET path="/socket.io/socket.io.js" host=pure-temple-6512.herokuapp.com request_id=f6e7b19a-91a7-486c-a53b-32740cd7d80a fwd="46.193.65.65" dyno=web.1 connect=8ms service=6ms status=404 bytes=233
+2015-03-06T18:32:18.781295+00:00 heroku[router]: at=info method=GET path="/collisionsBox.js" host=pure-temple-6512.herokuapp.com request_id=cf2c21f9-6e76-4ce8-ba99-cdb0f5e70587 fwd="46.193.65.65" dyno=web.1 connect=8ms service=9ms status=200 bytes=6234
+2015-03-06T18:32:18.916289+00:00 heroku[router]: at=info method=GET path="/scroll.js" host=pure-temple-6512.herokuapp.com request_id=8e3a1067-1a38-491d-a9a2-0d9b237e4dcc fwd="46.193.65.65" dyno=web.1 connect=1ms service=3ms status=200 bytes=797
+2015-03-06T18:32:19.043108+00:00 heroku[router]: at=info method=GET path="/gestionsCollisions.js" host=pure-temple-6512.herokuapp.com request_id=d7e60c66-0fdc-49c7-9f3b-7e55add24d85 fwd="46.193.65.65" dyno=web.1 connect=2ms service=5ms status=200 bytes=5460
+2015-03-06T18:32:19.184292+00:00 heroku[router]: at=info method=GET path="/character.js" host=pure-temple-6512.herokuapp.com request_id=97dd067c-b19f-4c00-8e6f-3d7e8ef74a50 fwd="46.193.65.65" dyno=web.1 connect=6ms service=11ms status=200 bytes=4928
+2015-03-06T18:32:19.416845+00:00 heroku[router]: at=info method=GET path="/main.js" host=pure-temple-6512.herokuapp.com request_id=1eeb532a-dfe2-422b-b10d-24d9e1ebc69d fwd="46.193.65.65" dyno=web.1 connect=8ms service=11ms status=200 bytes=21264
+2015-03-06T18:32:19.388407+00:00 heroku[router]: at=info method=GET path="/chat.js" host=pure-temple-6512.herokuapp.com request_id=d577444c-fd75-45fe-abdf-decdf19a9c50 fwd="46.193.65.65" dyno=web.1 connect=4ms service=5ms status=200 bytes=2719
+2015-03-06T18:32:19.325796+00:00 heroku[router]: at=info method=GET path="/mainScroll.js" host=pure-temple-6512.herokuapp.com request_id=1371d332-bd6a-4a18-b818-c2f6246011df fwd="46.193.65.65" dyno=web.1 connect=5ms service=7ms status=200 bytes=2280
+2015-03-06T18:32:19.509704+00:00 heroku[router]: at=info method=GET path="/timerUtils.js" host=pure-temple-6512.herokuapp.com request_id=e6a1eb9b-171d-4b79-a789-3b118f37f06b fwd="46.193.65.65" dyno=web.1 connect=1ms service=3ms status=200 bytes=788
+2015-03-06T18:32:19.450562+00:00 heroku[router]: at=info method=GET path="/ball.js" host=pure-temple-6512.herokuapp.com request_id=eb2f8206-41e8-4cf9-a251-e40b7647b0ab fwd="46.193.65.65" dyno=web.1 connect=2ms service=4ms status=200 bytes=1217
+2015-03-06T18:32:19.386750+00:00 heroku[router]: at=info method=GET path="/dagger.js" host=pure-temple-6512.herokuapp.com request_id=8449eccd-69d9-4d10-a172-d2fb4c2be4e6 fwd="46.193.65.65" dyno=web.1 connect=3ms service=7ms status=200 bytes=1615
+2015-03-06T18:32:19.513477+00:00 heroku[router]: at=info method=GET path="/collisions.js" host=pure-temple-6512.herokuapp.com request_id=c13d3de1-c062-40b8-aaaa-307521a167fb fwd="46.193.65.65" dyno=web.1 connect=1ms service=2ms status=200 bytes=1165
+2015-03-06T18:32:19.639306+00:00 heroku[router]: at=info method=GET path="/leftSlow.png" host=pure-temple-6512.herokuapp.com request_id=03bb3c0a-c76c-4835-9f4b-de1d5768875a fwd="46.193.65.65" dyno=web.1 connect=1ms service=5ms status=200 bytes=56534
+2015-03-06T18:32:19.709255+00:00 heroku[router]: at=info method=GET path="/mapS.png" host=pure-temple-6512.herokuapp.com request_id=8bf95ae2-6f9b-457e-bbe8-6da8faaff0b9 fwd="46.193.65.65" dyno=web.1 connect=3ms service=136ms status=200 bytes=2254352
+2015-03-06T18:32:19.829853+00:00 heroku[router]: at=info method=GET path="/rightSlow.png" host=pure-temple-6512.herokuapp.com request_id=d6f41ee9-ed38-4205-81fc-059bef8ea6a4 fwd="46.193.65.65" dyno=web.1 connect=31ms service=31ms status=200 bytes=56340
+2015-03-06T18:32:20.117066+00:00 heroku[router]: at=info method=GET path="/upSlow.png" host=pure-temple-6512.herokuapp.com request_id=8bf94989-f43a-47f5-a9ad-594a7bab3938 fwd="46.193.65.65" dyno=web.1 connect=2ms service=11ms status=200 bytes=57247
+2015-03-06T18:32:20.469719+00:00 heroku[router]: at=info method=GET path="/walkingR.png" host=pure-temple-6512.herokuapp.com request_id=c001e684-248c-41dd-a51d-1e1fcb3123cf fwd="46.193.65.65" dyno=web.1 connect=8ms service=133ms status=200 bytes=651953
+2015-03-06T18:32:20.529239+00:00 heroku[router]: at=info method=GET path="/walkingL.png" host=pure-temple-6512.herokuapp.com request_id=ec946879-186e-47f6-9ca4-cd4de7884fb3 fwd="46.193.65.65" dyno=web.1 connect=1ms service=62ms status=200 bytes=655659
+2015-03-06T18:32:22.175625+00:00 heroku[router]: at=info method=GET path="/standingL.png" host=pure-temple-6512.herokuapp.com request_id=6ba1fc3d-afa2-4273-a412-a5eae8606587 fwd="46.193.65.65" dyno=web.1 connect=4ms service=25ms status=200 bytes=147918
+2015-03-06T18:32:22.275408+00:00 heroku[router]: at=info method=GET path="/standingR.png" host=pure-temple-6512.herokuapp.com request_id=a11dc327-1161-4d68-ad71-23c89323b1fc fwd="46.193.65.65" dyno=web.1 connect=20ms service=85ms status=200 bytes=149481
+2015-03-06T18:32:22.562913+00:00 heroku[router]: at=info method=GET path="/walkingR2.png" host=pure-temple-6512.herokuapp.com request_id=22ede930-873c-4a90-819b-f8227fbd52d0 fwd="46.193.65.65" dyno=web.1 connect=1ms service=42ms status=200 bytes=645798
+2015-03-06T18:32:22.896793+00:00 heroku[router]: at=info method=GET path="/walkingL2.png" host=pure-temple-6512.herokuapp.com request_id=51540446-fd5a-4fbf-a3de-c61c275bb5a1 fwd="46.193.65.65" dyno=web.1 connect=17ms service=246ms status=200 bytes=647300
+2015-03-06T18:32:23.945325+00:00 heroku[router]: at=info method=GET path="/standingR2.png" host=pure-temple-6512.herokuapp.com request_id=bc50a70a-5abc-4c6c-85b5-919daf99b383 fwd="46.193.65.65" dyno=web.1 connect=5ms service=27ms status=200 bytes=148873
+2015-03-06T18:32:24.082449+00:00 heroku[router]: at=info method=GET path="/standingL2.png" host=pure-temple-6512.herokuapp.com request_id=e7d1e3e9-ebed-4dcb-affd-c9af8b2b028b fwd="46.193.65.65" dyno=web.1 connect=5ms service=12ms status=200 bytes=147206
+2015-03-06T18:32:28.662396+00:00 heroku[router]: at=info method=GET path="/slow.png" host=pure-temple-6512.herokuapp.com request_id=b8533112-c75c-424c-b6e5-dffdcfbd0a4f fwd="46.193.65.65" dyno=web.1 connect=5000ms service=20ms status=200 bytes=57148
+2015-03-06T18:37:02.220006+00:00 heroku[api]: Deploy cdfb7c7 by kvothewise@gmail.com
+2015-03-06T18:37:02.220006+00:00 heroku[api]: Release v65 created by kvothewise@gmail.com
+2015-03-06T18:37:02.331591+00:00 heroku[web.1]: State changed from up to starting
+2015-03-06T18:37:05.306103+00:00 heroku[web.1]: Starting process with command `node multiroomChatServer.js`
+2015-03-06T18:37:05.367382+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-03-06T18:37:06.193421+00:00 app[web.1]: Detected 512 MB available memory, 512 MB limit per process (WEB_MEMORY)
+2015-03-06T18:37:06.193441+00:00 app[web.1]: Recommending WEB_CONCURRENCY=1
+2015-03-06T18:37:06.554202+00:00 app[web.1]: Node app is running at localhost:15696
+2015-03-06T18:37:07.083220+00:00 heroku[web.1]: Process exited with status 143
+2015-03-06T18:37:06.873336+00:00 heroku[web.1]: State changed from starting to up
+2015-03-06T18:37:15.376351+00:00 heroku[router]: at=info method=GET path="/scroll.js" host=pure-temple-6512.herokuapp.com request_id=bd0d10a1-d2f9-44da-bab3-4901d26e75bd fwd="46.193.65.65" dyno=web.1 connect=2ms service=5ms status=200 bytes=797
+2015-03-06T18:37:15.414228+00:00 heroku[router]: at=info method=GET path="/dagger.js" host=pure-temple-6512.herokuapp.com request_id=8a3e1c6d-aec2-4305-bdcd-acf9e1e974b1 fwd="46.193.65.65" dyno=web.1 connect=1ms service=3ms status=200 bytes=1615
+2015-03-06T18:37:15.533614+00:00 heroku[router]: at=info method=GET path="/collisions.js" host=pure-temple-6512.herokuapp.com request_id=42ed81a3-d342-4321-8acc-896eb3e4ec32 fwd="46.193.65.65" dyno=web.1 connect=2ms service=2ms status=200 bytes=1165
+2015-03-06T18:37:14.403201+00:00 heroku[router]: at=info method=GET path="/" host=pure-temple-6512.herokuapp.com request_id=86d4395f-c251-4785-ba8b-58ab62c95e4f fwd="46.193.65.65" dyno=web.1 connect=4ms service=30ms status=200 bytes=1654
+2015-03-06T18:37:14.702852+00:00 heroku[router]: at=info method=GET path="/socket.io/socket.io.js" host=pure-temple-6512.herokuapp.com request_id=e6cec05a-aece-45c3-a548-06251b8ecb13 fwd="46.193.65.65" dyno=web.1 connect=2ms service=11ms status=404 bytes=233
+2015-03-06T18:37:15.419395+00:00 heroku[router]: at=info method=GET path="/chat.js" host=pure-temple-6512.herokuapp.com request_id=b88f6f49-bded-41f3-b225-edc2fadaa710 fwd="46.193.65.65" dyno=web.1 connect=6ms service=10ms status=200 bytes=2719
+2015-03-06T18:37:14.853090+00:00 heroku[router]: at=info method=GET path="/collisionsBox.js" host=pure-temple-6512.herokuapp.com request_id=0a0c0b23-4541-46be-ba45-b3e7368c358b fwd="46.193.65.65" dyno=web.1 connect=8ms service=8ms status=200 bytes=6234
+2015-03-06T18:37:15.499060+00:00 heroku[router]: at=info method=GET path="/timerUtils.js" host=pure-temple-6512.herokuapp.com request_id=58700096-1292-41a6-bee0-8e8b888f413b fwd="46.193.65.65" dyno=web.1 connect=1ms service=2ms status=200 bytes=788
+2015-03-06T18:37:14.985962+00:00 heroku[router]: at=info method=GET path="/main.js" host=pure-temple-6512.herokuapp.com request_id=da5f0a8a-021e-4a2d-bedd-eb24334a6c0d fwd="46.193.65.65" dyno=web.1 connect=5ms service=10ms status=200 bytes=21264
+2015-03-06T18:37:15.441653+00:00 heroku[router]: at=info method=GET path="/gestionsCollisions.js" host=pure-temple-6512.herokuapp.com request_id=5d3421f6-99c4-453c-b3d8-b9e46584e108 fwd="46.193.65.65" dyno=web.1 connect=1ms service=4ms status=200 bytes=5460
+2015-03-06T18:37:15.244837+00:00 heroku[router]: at=info method=GET path="/character.js" host=pure-temple-6512.herokuapp.com request_id=2a72ab36-4188-4a04-9451-611b2c2d408c fwd="46.193.65.65" dyno=web.1 connect=4ms service=6ms status=200 bytes=4928
+2015-03-06T18:37:15.584716+00:00 heroku[router]: at=info method=GET path="/slow.png" host=pure-temple-6512.herokuapp.com request_id=de56c24b-fbc6-48f3-8cd0-2844b76470e1 fwd="46.193.65.65" dyno=web.1 connect=3ms service=11ms status=200 bytes=57148
+2015-03-06T18:37:15.380921+00:00 heroku[router]: at=info method=GET path="/mainScroll.js" host=pure-temple-6512.herokuapp.com request_id=032ba3e9-ca6b-4819-9cd4-b2d3fc311259 fwd="46.193.65.65" dyno=web.1 connect=5ms service=7ms status=200 bytes=2280
+2015-03-06T18:37:15.498898+00:00 heroku[router]: at=info method=GET path="/ball.js" host=pure-temple-6512.herokuapp.com request_id=28609abb-3dcd-472f-afde-92267db76cfc fwd="46.193.65.65" dyno=web.1 connect=1ms service=3ms status=200 bytes=1217
+2015-03-06T18:37:15.628193+00:00 heroku[router]: at=info method=GET path="/leftSlow.png" host=pure-temple-6512.herokuapp.com request_id=adc2f725-77b0-4abc-96f1-60dc5660a457 fwd="46.193.65.65" dyno=web.1 connect=2ms service=5ms status=200 bytes=56534
+2015-03-06T18:37:15.700935+00:00 heroku[router]: at=info method=GET path="/mapS.png" host=pure-temple-6512.herokuapp.com request_id=937c17c5-9953-4daa-9456-a05bc675c93d fwd="46.193.65.65" dyno=web.1 connect=4ms service=151ms status=200 bytes=2254352
+2015-03-06T18:37:15.643457+00:00 heroku[router]: at=info method=GET path="/rightSlow.png" host=pure-temple-6512.herokuapp.com request_id=19633b97-b42b-4fc6-a6e6-ad093e4cf35e fwd="46.193.65.65" dyno=web.1 connect=1ms service=20ms status=200 bytes=56340
+2015-03-06T18:37:16.136914+00:00 heroku[router]: at=info method=GET path="/walkingL.png" host=pure-temple-6512.herokuapp.com request_id=d0e628e3-e2e7-46d6-98c4-4c09f7c68a53 fwd="46.193.65.65" dyno=web.1 connect=1ms service=22ms status=200 bytes=655659
+2015-03-06T18:37:16.119455+00:00 heroku[router]: at=info method=GET path="/walkingR.png" host=pure-temple-6512.herokuapp.com request_id=91787c9b-f2af-427d-8802-59df264a320e fwd="46.193.65.65" dyno=web.1 connect=2ms service=41ms status=200 bytes=651953
+2015-03-06T18:37:16.235939+00:00 heroku[router]: at=info method=GET path="/standingR.png" host=pure-temple-6512.herokuapp.com request_id=3eec7fb0-9b95-4d92-a759-9912b1a7a765 fwd="46.193.65.65" dyno=web.1 connect=2ms service=8ms status=200 bytes=149481
+2015-03-06T18:37:16.977952+00:00 heroku[router]: at=info method=GET path="/standingL.png" host=pure-temple-6512.herokuapp.com request_id=76128a73-039f-4b04-acd7-0186b8ad7faa fwd="46.1
+93.65.65" dyno=web.1 connect=1ms service=9ms status=200 bytes=147918
+2015-03-06T18:37:17.979616+00:00 heroku[router]: at=info method=GET path="/walkingL2.png" host=pure-temple-6512.herokuapp.com request_id=c10d5f73-a198-4aae-9d4e-66ae9fd
+98909 fwd="46.193.65.65" dyno=web.1 connect=1ms service=25ms status=200 bytes=647300
+2015-03-06T18:37:17.962431+00:00 heroku[router]: at=info method=GET path="/walkingR2.png" host=pure-temple-6512.herokuapp.com request_id=6ec3b8e4-423f-43ad-8db3-8036780226cf fwd="46.193.65.65" dyno=web.1 connect=1ms service=25ms status=200 bytes=645798
+2015-03-06T18:37:18.047293+00:00 heroku[router]: at=info method=GET path="/standingR2.png" host=pure-temple-6512.herokuapp.com request_id=23416ea0-1881-433e-9163-2938807da44c fwd="46.193.65.65" dyno=web.1 connect=4ms service=28ms status=200 bytes=148873
+2015-03-06T18:37:27.445846+00:00 heroku[router]: at=info method=GET path="/standingL2.png" host=pure-temple-6512.herokuapp.com request_id=060fff1d-7548-4cc8-b10f-67b320d2b330 fwd="46.193.65.65" dyno=web.1 connect=5002ms service=27ms status=200 bytes=147206
+2015-03-06T18:37:33.674305+00:00 heroku[router]: at=info method=GET path="/upSlow.png" host=pure-temple-6512.herokuapp.com request_id=9c7c8b4a-c075-40b1-b020-261dab2cfedc fwd="46.193.65.65" dyno=web.1 connect=5000ms service=7ms status=200 bytes=57247
+2015-03-06T18:38:06.491632+00:00 heroku[api]: Deploy abcf712 by kvothewise@gmail.com
+2015-03-06T18:38:06.491632+00:00 heroku[api]: Release v66 created by kvothewise@gmail.com
+2015-03-06T18:38:06.727699+00:00 heroku[web.1]: State changed from up to starting
+2015-03-06T18:38:08.053327+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-03-06T18:38:08.607676+00:00 heroku[web.1]: Starting process with command `node multiroomChatServer.js`
+2015-03-06T18:38:08.937112+00:00 heroku[web.1]: Process exited with status 143
+2015-03-06T18:38:09.932841+00:00 app[web.1]: Recommending WEB_CONCURRENCY=1
+2015-03-06T18:38:09.932819+00:00 app[web.1]: Detected 512 MB available memory, 512 MB limit per process (WEB_MEMORY)
+2015-03-06T18:38:10.324086+00:00 app[web.1]: Node app is running at localhost:14207
+2015-03-06T18:38:11.029205+00:00 heroku[web.1]: State changed from starting to up
+2015-03-06T18:40:49.924545+00:00 heroku[api]: Deploy 3b0bd6e by kvothewise@gmail.com
+2015-03-06T18:40:49.924545+00:00 heroku[api]: Release v67 created by kvothewise@gmail.com
+2015-03-06T18:40:50.653285+00:00 heroku[web.1]: State changed from up to starting
+2015-03-06T18:40:53.303462+00:00 heroku[web.1]: Starting process with command `node multiroomChatServer.js`
+2015-03-06T18:40:53.360818+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-03-06T18:40:54.763191+00:00 heroku[web.1]: Process exited with status 143
+2015-03-06T18:40:54.944179+00:00 app[web.1]: Detected 512 MB available memory, 512 MB limit per process (WEB_MEMORY)
+2015-03-06T18:40:54.944205+00:00 app[web.1]: Recommending WEB_CONCURRENCY=1
+2015-03-06T18:40:55.742290+00:00 app[web.1]: Node app is running at localhost:42434
+2015-03-06T18:40:55.950773+00:00 heroku[web.1]: State changed from starting to up

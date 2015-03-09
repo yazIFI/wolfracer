@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by micbuffa (http://jsbin.com/fopomo/14/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+canvas {
+  border: 1px solid black;
+}
+</style>
+
+<div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">
+	<b>ROOMS</b>
+	<div id="rooms"></div>
+</div>
+<div style="float:left;width:300px;height:250px;overflow:scroll-y;padding:10px;">
+	<div id="conversation"></div>
+	<input id="data" style="width:200px;" />
+	<input type="button" id="datasend" value="send" />
+</div>
+</head>
+<body>
+  <canvas id="myCanvas"  width="800" height="600"></canvas>
+  <script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+<script src="collisionsBox.js"></script>
+<script src="collisionsBoxLevel2.js"></script>
+<script src="scroll.js"></script>
+<script src="mainScroll.js"></script>
+<script src="dagger.js"></script>
+<script src="chat.js"></script>
+<script src="gestionsCollisions.js"></script>
+<script src="main.js"></script>
+<script src="character.js"></script>
+<script src="ball.js"></script>
+<script src="timerUtils.js"></script>
+<script src="collisions.js"></script>
+<script src="obstacle.js"></script>
+</body>
+</html>

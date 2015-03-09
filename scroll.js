@@ -1,0 +1,18 @@
+
+//background
+scrollImg = new Image();
+canvasWidth = 800;
+canvasHeight = 600;
+scrollVal = 0;
+scrollValY = 0 ;
+//speed =1;
+
+scrollImg.src = "mapS.png";
+//resize du personnage
+var sizeCharacter = 600 / 3 ;
+//boite de collision servant à atterir sur les plateforme
+var tempX =(2/6) * sizeCharacter  ; 
+var tempY = (5/6) * sizeCharacter ; 
+//hit box au pied du personnage pour atterir sur les plateforme voir la partie gestion des collisions
+var landingBoxW =  sizeCharacter/2; 
+var landingBoxH = sizeCharacter/6; 
