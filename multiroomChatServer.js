@@ -18,6 +18,7 @@ var express=require('express');
       this.onGround = false;
       this.slowed = false;
       this.ownSlow = false;
+      this.crouching = false;
     }
 var monsters = {};
 var daggerThrown = [];

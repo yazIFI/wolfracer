@@ -69,3 +69,45 @@ function dagger(x,y,direction)
 	this.direction=direction;
 
 };
+
+ //Render et update des dague envoyé par les joueur. 
+     
+function renderDagger(delta)
+     {
+        for (i = 0 ; i < daggerThrown.length ; i++)
+          {
+            
+            //solution valable uniquement valable uniquement en offline maheuresement
+            //ctx.drawImage(daggerThrown[i].img,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
+            //daggerThrown[i].x += daggerThrown[i].speedX ;
+            //daggerThrown[i].y += daggerThrown[i].speedY ;
+                
+            if (daggerThrown[i].direction == "right")
+            {
+              ctx.drawImage(daggerRight,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
+            
+              daggerThrown[i].x +=  calcDistanceToMove(delta, 250) ;
+            }
+            else if (daggerThrown[i].direction == "left")
+            {
+              ctx.drawImage(daggerLeft,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
+              daggerThrown[i].x += calcDistanceToMove(delta, -250) ;
+            }
+            else if (daggerThrown[i].direction == "up")
+            {
+              ctx.drawImage(daggerUp,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
+              daggerThrown[i].y += calcDistanceToMove(delta, -250) ;
+              
+            }
+            else if (daggerThrown[i].direction == "down")
+            {
+              ctx.drawImage(daggerDown,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
+              daggerThrown[i].y += calcDistanceToMove(delta, 250);
+            
+            }
+            if (daggerThrown[i].x + sizeDagger > imgWidth || daggerThrown[i].y + sizeDagger > imgHeight )
+            {
+              daggerThrown.splice(i,1);
+            } 
+          }
+     }

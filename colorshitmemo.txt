@@ -1,4 +1,5 @@
-Hue/saturation
--180
--30
--9
+//Valeur permettant de passer a la couleur du p2
+//Hue/saturation
+//-180
+//-30
+//-9

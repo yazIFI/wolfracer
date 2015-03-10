@@ -2,7 +2,7 @@
 
 
 window.onload = function init() {
-
+          var timerSlow=0;
           var game = new GF();
           game.start();
 
@@ -51,7 +51,15 @@ var GF = function(){
            lastTime = newTime; 
            return;
          }
-      
+         if(monsters[socket.username].slowed)
+         {
+          timerSlow++;
+          if (timerSlow == 180)
+          {
+            monsters[socket.username].slowed = false;
+          }
+         }
+        
         //calculate the difference between last & current frame
         var diffTime = newTime - lastTime; 
 
@@ -72,50 +80,20 @@ var GF = function(){
        ctx.clearRect(0, 0, w, h);
      }
 
-    //Render et update des dague envoyé par les joueur. 
-     function renderDagger(delta)
-     {
-        for (i = 0 ; i < daggerThrown.length ; i++)
-          {
-            
-            //solution valable uniquement valable uniquement en offline maheuresement
-            //ctx.drawImage(daggerThrown[i].img,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-            //daggerThrown[i].x += daggerThrown[i].speedX ;
-            //daggerThrown[i].y += daggerThrown[i].speedY ;
-            if (daggerThrown[i].direction == "right")
-            {
-              ctx.drawImage(daggerRight,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-            
-              daggerThrown[i].x +=  calcDistanceToMove(delta, 250) ;
-            }
-            else if (daggerThrown[i].direction == "left")
-            {
-              ctx.drawImage(daggerLeft,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-              daggerThrown[i].x += calcDistanceToMove(delta, -250) ;
-            }
-            else if (daggerThrown[i].direction == "up")
-            {
-              ctx.drawImage(daggerUp,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-              daggerThrown[i].y += calcDistanceToMove(delta, -250) ;
-              
-            }
-            else if (daggerThrown[i].direction == "down")
-            {
-              ctx.drawImage(daggerDown,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-              daggerThrown[i].y += calcDistanceToMove(delta, 250);
-            
-            }
-            if (daggerThrown[i].x + sizeDagger > imgWidth || daggerThrown[i].y + sizeDagger > imgHeight )
-            {
-              daggerThrown.splice(i,1);
-            } 
-          }
-     }
+
   
      // Functions for drawing the monsters[socket.username] and maybe other objects
      function drawOthermonster(m) {
       ctx.save();
-      if (m.jump && m.side)
+       if (m.crouching && m.side)
+       {
+        characterDropR2.render(m.x,m.y,m.life);
+       }
+       else if (m.crouching)
+       {
+        characterDropL2.render(m.x,m.y,m.life);
+       }
+      else if (m.jump && m.side)
       {
       characterWalking2.frameIndex = 2 ;
       characterWalking2.render(m.x,m.y,m.life);
@@ -158,23 +136,29 @@ var GF = function(){
              level=2;
              etatCourant = etats.gameOver;
              scrollImg.src = "mapLevel2.jpg";
-
-
          }
        
-       //animation et scroll du saut(droite)
-       if (monsters[socket.username].jump && monsters[socket.username].side)
+       if (monsters[socket.username].crouching && monsters[socket.username].side)
+       {
+        characterDropR.render(x,y,life);
+       }
+       else if (monsters[socket.username].crouching )
+       {
+        characterDropL.render(x,y,life);
+       }
+       //animation  du saut(droite)
+       else if (monsters[socket.username].jump && monsters[socket.username].side)
       {
       characterWalking.frameIndex = 2 ;
       characterWalking.render(x,y,life);
       }
-      //animation et scroll du saut(gauche)
+      //animation du saut(gauche)
       else if (monsters[socket.username].jump)
       {
       characterWalkingL.frameIndex = 2 ;
       characterWalkingL.render(x,y,life);
       }
-      //animation et scroll du deplacement (droite)
+      //animation  du deplacement (droite)
 	    else if (inputStates.right)
 			{
 			characterWalking.update();
@@ -182,7 +166,7 @@ var GF = function(){
       monsters[socket.username].side = true;
       monsters[socket.username].running = true;
       }
-      //animation et scroll du deplacement (gauche)
+      //animation  du deplacement (gauche)
 		  else if (inputStates.left)
 			{
 			characterWalkingL.update();
@@ -190,14 +174,14 @@ var GF = function(){
       monsters[socket.username].side = false;
       monsters[socket.username].running = true;
       }
-      //animation et scroll du personnage immobile (droite)
+      //animation  du personnage immobile (droite)
 		  else if (monsters[socket.username].side)
 		  {characterWalking.frameIndex =0 ;
         characterWalking.tickCount =0 ;
       characterStandingR.update();
       characterStandingR.render(x,y,life);
       monsters[socket.username].running = false;}
-       //animation et scroll du personnage immobile (droite)
+       //animation du personnage immobile (droite)
 			else if (!monsters[socket.username].side)
       {characterWalkingL.frameIndex =0 ;
         characterWalkingL.tickCount =0 ;
@@ -287,7 +271,7 @@ var GF = function(){
             //drawMymonster(monsters[user].x, monsters[user].y);
             //on les anime tous sauf le joueur du client qui a eu lui meme son traitement specifique
             //LAISSER LE COMMENTAIRE(future amelioration des perfs possible en evitant de dessiner les character hors-cadre)
-            //(encore instable)
+            //(encore bugguer)
             if(user != socket.username) //&&  (monsters[user].x > scrollVal) && (monsters[user].x + 200 <  canvasWidth))
                {drawOthermonster(monsters[user]);}
              
@@ -314,7 +298,10 @@ var GF = function(){
           {
             socket.emit('receive_position', monsters[socket.username],daggerThrown,socket.username);
           }
+          //******
+          //gestionsCollisions(monsters[socket.username].x , monsters[socket.username].y);
           break;
+
         case etats.gameOver:
           //console.log("GAME OVER");
           ctx.fillText("GAME OVER", 100, 100);
@@ -357,9 +344,10 @@ var GF = function(){
 			     //renderRight();
             monsters[socket.username].speedX = monsters[socket.username].speed;
         }
-        if (inputStates.down) {
+        if (inputStates.down && monsters[socket.username].onground && !monsters[socket.username].jump) {
             //monsters[socket.username].speedY = monsters[socket.username].speed;
-            monsters[socket.username].onground = false;
+            //monsters[socket.username].onground = false;
+            monsters[socket.username].crouching = true;
         } 
         if (inputStates.space) {
           //On check si on ne saut pas deja(voir double jump si on a le temps) 
@@ -594,6 +582,7 @@ var GF = function(){
              inputStates.right = false;
           } else if (event.keyCode === 40) {
              inputStates.down = false;
+             monsters[socket.username].crouching = false;
           } else if (event.keyCode === 32) {
              inputStates.space = false;
           }

@@ -50,9 +50,31 @@ function gestionsCollisions(x , y)
     //on recupere les position necessaire pour la landing box qui se trouve au pied du personnage
     var landingBoxX=x + tempX;
     var landingBoxY=y + tempY;
-    //LAISSER EN CAS DE DEBUG (visualisation du landing box au pied du personnage pour s'assurer visuellement des collisions)
+    //on pre-calcule les centre des hitbox du personnage
+    if(monsters[socket.username].crouching)
+    {
+    var HitBoxX = x + 100 ;
+    var HitBoxY = y + 150 ; 
+    var HitBoxR = 33;
+    }
+    else
+    {
+    var HitBoxX = x + 100 ;
+    var HitBoxY = y + 100 ; 
+    var HitBoxR = 33;
+    }
+    //ajout future de plusieur hitbox pour avoir des collision avec le personnage plus precise
+    //var headHitBoxX = x  ;
+    //var headHitBoxY = y  ; 
+    //LAISSER EN CAS DE DEBUG (visualisation de la hitbox)
     //ctx.fillStyle="#FF0000";
-    //ctx.fillRect(landingBoxX - scrollVal,landingBoxY - scrollValY,landingBoxW,landingBoxH);
+    //ctx.fillRect(x - scrollVal,y - scrollValY,sizeCharacter,sizeCharacter);
+    //visualisation de la hitbox du joueur
+    /*
+    ctx.beginPath();
+    ctx.arc(HitBoxX - scrollVal,HitBoxY - scrollValY,HitBoxR,0,2*Math.PI);
+    ctx.stroke();
+    */
     //on enleve le lock qui nous maintient au sol pour pouvoir tomber si l'on est plus sur notre plateforme
     monsters[socket.username].onground = false;
     
@@ -122,16 +144,18 @@ function gestionsCollisions(x , y)
     }
 
     //on verifie si on a atteint un bonus(dagger)
+   // ctx.fillRect( 773- scrollVal ,108 - scrollValY ,sizeDagger ,sizeDagger );
     if ( x < 773 + sizeDagger &&
-   x + sizeCharacter > 773 &&
+   x + 100 > 773 &&
    y < 108 + sizeDagger &&
-   sizeCharacter + y > 108 )
+   100 + y > 108 )
     {
       monsters[socket.username].ownSlow = true;
       //console.log(monsters[socket.username].ownSlow = true);
     }
 
-    //gestion des collision avec les dague
+    //gestion des collision avec les dague( avec rectangle)
+    /*
     for (i = 0 ; i < daggerThrown.length ; i++)
           {
             if ( x < daggerThrown[i].x  + sizeDagger &&
@@ -143,7 +167,31 @@ function gestionsCollisions(x , y)
               //daggerThrown.splice(i,1);
             }
           }
+      */
+      //collision avec les dague usant de cercle
+      for (i = 0 ; i < daggerThrown.length ; i++)
+          {
+            //on pre-calcule les centre des hitbox des dagues
+            var HitBoxDX = daggerThrown[i].x + 50 ;
+            var HitBoxDY = daggerThrown[i].y + 50 ; 
+            var HitBoxDR = 33;
+            //visualisation de la hitbox de la dague
+            /*
+            ctx.beginPath();
+            ctx.arc(HitBoxDX - scrollVal,HitBoxDY - scrollValY,HitBoxDR,0,2*Math.PI);
+            ctx.stroke();
+            */
+            var dx = (HitBoxX + HitBoxR) - (HitBoxDX+ HitBoxDR);
+            var dy = (HitBoxY + HitBoxR) - (HitBoxDY + HitBoxDR);
+            var distance = Math.sqrt(dx * dx + dy * dy);
 
+            if (distance < HitBoxR + HitBoxDR) {
+                // collision detected!
+                monsters[socket.username].slowed = true;
+                daggerThrown.splice(i,1);
+                timerSlow = 0;
+            }
+          }
       //gestion des collision avec les monstres
       for (i = 0 ; i < tabMonster.length ; i++)
       {

@@ -12,6 +12,10 @@ var characterStandingSpriteR = new Image();
 characterStandingSpriteR.src = "standingR.png";
 var characterStandingSpriteL = new Image();
 characterStandingSpriteL.src = "standingL.png";
+var characterDropSpriteR = new Image();
+characterDropSpriteR.src = "dropR.png";
+var characterDropSpriteL = new Image();
+characterDropSpriteL.src = "dropL.png";
 
 //p2 sprite
 
@@ -23,6 +27,10 @@ var characterStandingSpriteR2 = new Image();
 characterStandingSpriteR2.src = "standingR2.png";
 var characterStandingSpriteL2 = new Image();
 characterStandingSpriteL2.src = "standingL2.png";
+var characterDropSpriteR2 = new Image();
+characterDropSpriteR2.src = "dropR2.png";
+var characterDropSpriteL2 = new Image();
+characterDropSpriteL2.src = "dropL2.png";
 
 
 //l'objet sprite permettera à l'aide de 2 métohde update et render l'animation de nos ressource graphique
@@ -113,13 +121,32 @@ var characterStandingL  = new sprite ({
   numberOfFrames : 1
 });
 
+
+var characterDropR  = new sprite ({
+  context: ctx,
+    width: 600,
+    height: 600,
+    image: characterDropSpriteR,
+  //nombre de frame dans la spritesheet
+  numberOfFrames : 1
+});
+
+var characterDropL = new sprite({
+    context: ctx,
+    width: 600,
+    height: 600,
+    image: characterDropSpriteL,
+	//nombre de frame dans la spritesheet
+	numberOfFrames : 5
+});
+
 var characterWalking = new sprite({
     context: ctx,
     width: 600,
     height: 600,
     image: characterWalkingSprite,
-	//nombre de frame dans la spritesheet
-	numberOfFrames : 5
+  //nombre de frame dans la spritesheet
+  numberOfFrames : 5
 });
 
 var characterWalkingL = new  sprite({
@@ -148,6 +175,25 @@ var characterStandingL2  = new sprite ({
     width: 600,
     height: 600,
     image: characterStandingSpriteL2,
+  //nombre de frame dans la spritesheet
+  numberOfFrames : 1
+});
+
+var characterDropR2  = new sprite ({
+  context: ctx,
+    width: 600,
+    height: 600,
+    image: characterDropSpriteR2,
+  //nombre de frame dans la spritesheet
+  numberOfFrames : 1
+});
+
+
+var characterDropL2  = new sprite ({
+  context: ctx,
+    width: 600,
+    height: 600,
+    image: characterDropSpriteL2,
   //nombre de frame dans la spritesheet
   numberOfFrames : 1
 });
