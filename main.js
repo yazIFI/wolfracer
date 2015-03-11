@@ -296,7 +296,7 @@ var GF = function(){
             || monsters[socket.username].jump || monsters[socket.username].onground == false 
             || (daggerThrown.length != 0))
           {
-            socket.emit('receive_position', monsters[socket.username],daggerThrown,socket.username);
+            socket.emit('receive_position', monsters[socket.username],socket.username);
           }
           //******
           //gestionsCollisions(monsters[socket.username].x , monsters[socket.username].y);
@@ -365,35 +365,48 @@ var GF = function(){
         //lancer une dague recuperer au prealable
         if (inputStates.r)
         {
+          var dague;
             if ( monsters[socket.username].ownSlow)
             {
-              console.log("shot");
+              //console.log("shot");
               //on envoit la dague dans la direction indiquer par le clavier du joueur
               if (inputStates.right)
               {
-                daggerThrown.push(new dagger(monsters[socket.username].x + 250,monsters[socket.username].y,"right"));
-                console.log("shot right");
+                dague = new dagger(monsters[socket.username].x + 250,monsters[socket.username].y,"right");
+                daggerThrown.push(dague);
+                socket.emit('new_dagger', dague);
+                //console.log("shot right");
               }
               else if (inputStates.left)
               {
-                daggerThrown.push(new dagger(monsters[socket.username].x - 150,monsters[socket.username].y,"left"));
+                dague = new dagger(monsters[socket.username].x - 150,monsters[socket.username].y,"left") ; 
+                daggerThrown.push(dague);
+                 socket.emit('new_dagger',dague);
               }
               else if (inputStates.down)
               {
-                daggerThrown.push(new dagger(monsters[socket.username].x,monsters[socket.username].y + 250,"down"));
+                dague = new dagger(monsters[socket.username].x,monsters[socket.username].y + 250,"down");
+                daggerThrown.push(dague);
+                 socket.emit('new_dagger',dague);
               }
               else if (inputStates.up)
               {
-                daggerThrown.push(new dagger(monsters[socket.username].x,monsters[socket.username].y  - 150,"up"));
+                dague = new dagger(monsters[socket.username].x,monsters[socket.username].y  - 150,"up");
+                daggerThrown.push(dague);
+                 socket.emit('new_dagger',dague);
               }
               //si aucune direction n'est indiqué on l'envoit du coté ou il regarde
               else if (monsters[socket.username].side)
               {
-                daggerThrown.push(new dagger(monsters[socket.username].x  + 250,monsters[socket.username].y,"right"));
+                dague = new dagger(monsters[socket.username].x  + 250,monsters[socket.username].y,"right");
+                daggerThrown.push(dague);
+                 socket.emit('new_dagger',dague);
               }
               else 
               {
-                daggerThrown.push(new dagger(monsters[socket.username].x - 150,monsters[socket.username].y,"left"));
+                dague = new dagger(monsters[socket.username].x - 150,monsters[socket.username].y,"left");
+                daggerThrown.push(dague);
+                 socket.emit('new_dagger',dague);
               }
               //le joueur n'a plus de dague de slow
               monsters[socket.username].ownSlow = false;

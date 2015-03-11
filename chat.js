@@ -36,12 +36,18 @@ var socket = io.connect();
 		
 	});
 	
-	 socket.on('update_position', function (data,data2,data3) {
+	 socket.on('update_position', function (data,data3) {
       monsters[data3]=data;
-      daggerThrown = data2;
-
-     
     });
+
+	 socket.on('new_dagger', function (data) {
+     daggerThrown.push(data);
+     
+  });
+	socket.on('delete_dagger', function (data) {
+     daggerThrown.splice(data,1);
+     
+  });
 	
 	//window.addEventListener('keydown', function(event){  socket.emit('receive_position', monsters);}, false);
 	//window.addEventListener('keyup', function(event){  socket.emit('receive_position', monsters);}, false);

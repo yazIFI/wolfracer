@@ -59,7 +59,7 @@ io.sockets.on('connection', function (socket) {
 		socket.username = username;
 		usernames[username] = username;
 		monsters[username] = new monster();
-		socket.emit('update_position', monsters[socket.username],daggerThrown,socket.username);
+		socket.emit('update_position', monsters[socket.username],socket.username);
 		// store the room name in the socket session for this client
 		socket.room = 'room1';
 		// add the client's username to the global list
@@ -76,10 +76,19 @@ io.sockets.on('connection', function (socket) {
 		socket.emit('updaterooms', rooms, 'room1');
 	});
 
-	socket.on('receive_position', function (data,data2,data3) {
+	socket.on('receive_position', function (data,data3) {
      monsters[data3] = data;
-     daggerThrown = data2;
-     socket.broadcast.emit('update_position', data,data2,data3); // send `data` to all other clients
+    
+     socket.broadcast.emit('update_position', data,data3); // send `data` to all other clients
+  });
+
+	socket.on('new_dagger', function (data) {
+     daggerThrown.push(data);
+     socket.broadcast.emit('new_dagger', data); // send `data` to all other clients
+  });
+	socket.on('delete_dagger', function (data) {
+     daggerThrown.splice(data,1);
+     socket.broadcast.emit('delete_dagger', data); // send `data` to all other clients
   });
 	
 	// when the client emits 'sendchat', this listens and executes

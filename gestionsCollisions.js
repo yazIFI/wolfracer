@@ -190,6 +190,7 @@ function gestionsCollisions(x , y)
                 monsters[socket.username].slowed = true;
                 daggerThrown.splice(i,1);
                 timerSlow = 0;
+                socket.emit('delete_dagger', i);
             }
           }
       //gestion des collision avec les monstres
