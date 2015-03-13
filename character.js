@@ -33,7 +33,7 @@ var characterDropSpriteL2 = new Image();
 characterDropSpriteL2.src = "dropL2.png";
 
 
-//l'objet sprite permettera à l'aide de 2 métohde update et render l'animation de nos ressource graphique
+//l'objet sprite permettera à l'aide de 2 méthode update et render l'animation de nos ressource graphique
 //frameIndex et le numéro que de la frame que la méthode render affichera. 
 //tickpPerFrame nous permet d'indiquer tout les combien de tick du processeur nous changeons de frame
 //c'est donc le temp de passage d'une frame a l'autre(augmenter pour des animation plus lente,

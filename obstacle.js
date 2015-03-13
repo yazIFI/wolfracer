@@ -4,14 +4,13 @@
 
 
 var step = 0;
-var stepMonster=0;
-var spriteX=0;
+
 var spriteY=0;
 
 var imgfire = new Image();
-var imgMonster = new Image();
+
 imgfire.src = "fire.png";
-imgMonster.src = "monster-lizard.png";
+
 
 
 
@@ -20,22 +19,29 @@ function monster2(ctx,x,y,life){
     this.x = x;
     this.y = y;
     this.life = life;
-    this.width = 50;
-    this.height = 50;
+    this.width = 600;
+    this.height = 600;
     this.tempX=this.x;
-
-    this.drawMonster = function(){
-        var tabSpriteMonstre = [0,90,170,250,330,410];
-        this.ctx.drawImage(imgMonster,tabSpriteMonstre[spriteX],spriteY,this.width, this.height,this.x -scrollVal, this.y - scrollValY, 100, 150);
-
-        if(this.x>this.tempX){stepMonster=-200;spriteY=110;}
-        else if(this.x<this.tempX-300){stepMonster=200;spriteY=0;}
-        if(stepMonster<0){this.x-=5;}
+    this.tickCount = 0;
+    this.ticksPerFrame = 30;
+    this.stepMonster=0;
+    this.spriteX=0;
+    this.imgMonster = new Image();
+    this.imgMonster.src = "snakeR.png";
+    
+}
+    monster2.prototype.drawMonster = function(){
+        
+        //console.log("SpriteX : " + spriteX);
+        //console.log("tickCount : " + this.tickCount);
+        this.ctx.drawImage(this.imgMonster,((this.spriteX % 2) * this.width),0,this.width, this.height,this.x -scrollVal, this.y - scrollValY, 200, 200);
+        if(this.tickCount > this.ticksPerFrame){this.tickCount = 0 ;this.spriteX= this.spriteX + 1;}
+        if(this.x>this.tempX){this.stepMonster=-200;this.imgMonster.src = "snakeL.png";}
+        else if(this.x<this.tempX-300){this.stepMonster=200;this.imgMonster.src = "snakeR.png";}
+        if(this.stepMonster<0){this.x-=5;}
         else{this.x+=5;}
-        if(spriteX<=5){spriteX++;}
-        else{spriteX=0;}
-    }
-
+        this.tickCount =this.tickCount + 1;
+        
 };
 
 function fire(ctx,x,y) {

@@ -283,12 +283,13 @@ var GF = function(){
           //Render des dague envoyé par les joueur.
           renderDagger(delta);
           //affichages des boules de feu
-            for(var i=0;i<tabFire.length;i++){
+            for(i=0;i<tabFire.length;i++){
                 tabFire[i].drawFire();
             }
 
           //affichage des monstres
-            for(var i=0;i<tabMonster.length;i++) {
+            for(i=0;i<tabMonster.length;i++) {
+              //console.log(i);
                 tabMonster[i].drawMonster();
             }
 

@@ -67,7 +67,7 @@ function gestionsCollisions(x , y)
     //var headHitBoxX = x  ;
     //var headHitBoxY = y  ; 
     //LAISSER EN CAS DE DEBUG (visualisation de la hitbox)
-    //ctx.fillStyle="#FF0000";
+    ctx.fillStyle="#FF0000";
     //ctx.fillRect(x - scrollVal,y - scrollValY,sizeCharacter,sizeCharacter);
     //visualisation de la hitbox du joueur
     /*
@@ -185,7 +185,8 @@ function gestionsCollisions(x , y)
             var dy = (HitBoxY + HitBoxR) - (HitBoxDY + HitBoxDR);
             var distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < HitBoxR + HitBoxDR) {
+            if (distance < HitBoxR + HitBoxDR) 
+            {
                 // collision detected!
                 monsters[socket.username].slowed = true;
                 daggerThrown.splice(i,1);
@@ -193,18 +194,29 @@ function gestionsCollisions(x , y)
                 socket.emit('delete_dagger', i);
             }
           }
-      //gestion des collision avec les monstres
+      //gestion des collision avec les monstres avec cercle de collision
       for (i = 0 ; i < tabMonster.length ; i++)
-      {
-          if ( x < tabMonster[i].x  + tabMonster[i].width &&
-              x + sizeCharacter > tabMonster[i].x &&
-              y < tabMonster[i].y + tabMonster[i].height &&
-              sizeCharacter + y > tabMonster[i].y )
           {
-              if(monsters[socket.username].life >0) {monsters[socket.username].life-= 0.2;}
-          }
-      }
+            //on pre-calcule les centre des hitbox des dagues
+            var HitBoxMX = tabMonster[i].x + 50 ;
+            var HitBoxMY = tabMonster[i].y + 50 ; 
+            var HitBoxMR = 33;
+            //visualisation de la hitbox de la dague
+            /*
+            ctx.beginPath();
+            ctx.arc(HitBoxMX - scrollVal,HitBoxMY - scrollValY,HitBoxMR,0,2*Math.PI);
+            ctx.stroke();
+            */
+            var dx = (HitBoxX + HitBoxR) - (HitBoxMX+ HitBoxMR);
+            var dy = (HitBoxY + HitBoxR) - (HitBoxMY + HitBoxMR);
+            var distance = Math.sqrt(dx * dx + dy * dy);
 
+            if (distance < HitBoxR + HitBoxMR) 
+            {
+                if(monsters[socket.username].life >0) {monsters[socket.username].life-= 0.2;}
+            }
+          }
+          
       //gestion des collision avec les boules de feu
       for (i = 0 ; i < tabFire.length ; i++)
       {
