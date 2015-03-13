@@ -133,8 +133,8 @@ function gestionsCollisions(x , y)
    y < 108 + sizeDagger &&
    100 + y > 108 )
     {
-      monsters[socket.username].ownSlow = true;
-      //console.log(monsters[socket.username].ownSlow = true);
+      monsters[socket.username].ownSlow = 5;
+      //console.log(monsters[socket.username].ownSlow == true);
     }
     //dague Tp
     //ctx.fillRect( 716- scrollVal ,844 - scrollValY ,sizeDagger ,sizeDagger );
@@ -144,7 +144,7 @@ function gestionsCollisions(x , y)
    100 + y > 844 )
     {
       monsters[socket.username].ownTp = true;
-      //console.log(monsters[socket.username].ownSlow = true);
+      //console.log(monsters[socket.username].ownSlow == true);
     }
 
    

@@ -1,8 +1,9 @@
 // Inits
-
+ var timerThrow=0;
 
 window.onload = function init() {
           var timerSlow=0;
+        
           var game = new GF();
           game.start();
 
@@ -34,7 +35,7 @@ var GF = function(){
     var fps; 
     // for time based animation
     var delta, oldTime = 0;
-  
+   
    
   
     // The monsters[socket.username] !
@@ -46,6 +47,8 @@ var GF = function(){
   
     var measureFPS = function(newTime){
       
+          timerThrow++;
+          
          // test for the very first invocation
          if(lastTime === undefined) {
            lastTime = newTime; 
@@ -54,9 +57,11 @@ var GF = function(){
          if(monsters[socket.username].slowed)
          {
           timerSlow++;
-          if (timerSlow == 180)
+          
+          if (timerSlow > 180)
           {
             monsters[socket.username].slowed = false;
+            timerSlow = 0;
           }
          }
         
@@ -208,7 +213,7 @@ var GF = function(){
       switch(etatCourant) {
         case etats.menuPrincipal:
           if(monsters[socket.username] == undefined || imgWidth == undefined || imgHeight == undefined ||
-           w == undefined || h == undefined )
+           w == undefined || h == undefined || timerThrow == undefined)
           {
             clearCanvas();
             ctx.fillText("Wolf Racer", 100, 100);
@@ -368,18 +373,21 @@ var GF = function(){
         //lancer une dague recuperer au prealable
         if (inputStates.r)
         {
-          
-            if ( monsters[socket.username].ownSlow)
+            //console.log(timerThrow)
+            if ( monsters[socket.username].ownSlow > 0 && timerThrow > 60)
             {
               addDagger("slow");
+              monsters[socket.username].ownSlow--;
+              timerThrow=0;
             }
         }
         if (inputStates.t)
         {
-         
-            if ( monsters[socket.username].ownTp)
+          //console.log(timerThrow)
+            if ( monsters[socket.username].ownTp  && timerThrow > 60)
             {
               addDagger("tp");
+              timerThrow=0;
             }
         }
         if (inputStates.y)

@@ -1,3 +1,5 @@
+var  daggerSpeed = 400;
+
 var daggerImg = new Image();
 
 // on stock les dague lancé
@@ -137,7 +139,7 @@ function addDagger(type)
               //le joueur n'a plus de dague de slow
               if(type == "slow")
               {
-                monsters[socket.username].ownSlow = false;
+                monsters[socket.username].ownSlow--;
                 
               }
               else if (type == "tp")
@@ -152,6 +154,7 @@ function addDagger(type)
      
 function renderDagger(delta)
      {
+
         for (i = 0 ; i < daggerThrown.length ; i++)
           {
              
@@ -160,52 +163,52 @@ function renderDagger(delta)
             //daggerThrown[i].x += daggerThrown[i].speedX ;
             //daggerThrown[i].y += daggerThrown[i].speedY ;
              
-          
+             
 
             if (daggerThrown[i].direction == "right" && daggerThrown[i].type == "slow")
             {
               ctx.drawImage(daggerRight,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
             
-              daggerThrown[i].x +=  calcDistanceToMove(delta, 250) ;
+              daggerThrown[i].x +=  calcDistanceToMove(delta, daggerSpeed) ;
             }
             else if (daggerThrown[i].direction == "right" && daggerThrown[i].type == "tp")
             {
               ctx.drawImage(daggerTpR,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
             
-              daggerThrown[i].x +=  calcDistanceToMove(delta, 250) ;
+              daggerThrown[i].x +=  calcDistanceToMove(delta, daggerSpeed) ;
             }
             else if (daggerThrown[i].direction == "left" && daggerThrown[i].type == "slow")
             {
               ctx.drawImage(daggerLeft,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-              daggerThrown[i].x += calcDistanceToMove(delta, -250) ;
+              daggerThrown[i].x += calcDistanceToMove(delta, -daggerSpeed) ;
             }
             else if (daggerThrown[i].direction == "left" && daggerThrown[i].type == "tp")
             {
               ctx.drawImage(daggerTpL,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-              daggerThrown[i].x += calcDistanceToMove(delta, -250) ;
+              daggerThrown[i].x += calcDistanceToMove(delta, -daggerSpeed) ;
             }
             else if (daggerThrown[i].direction == "up" && daggerThrown[i].type == "slow")
             {
               ctx.drawImage(daggerUp,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-              daggerThrown[i].y += calcDistanceToMove(delta, -250) ;
+              daggerThrown[i].y += calcDistanceToMove(delta, -daggerSpeed) ;
               
             }
              else if (daggerThrown[i].direction == "up" && daggerThrown[i].type == "tp")
             {
               ctx.drawImage(daggerTpU,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-              daggerThrown[i].y += calcDistanceToMove(delta, -250) ;
+              daggerThrown[i].y += calcDistanceToMove(delta, -daggerSpeed) ;
               
             }
             else if (daggerThrown[i].direction == "down" && daggerThrown[i].type == "slow")
             {
               ctx.drawImage(daggerImg,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-              daggerThrown[i].y += calcDistanceToMove(delta, 250);
+              daggerThrown[i].y += calcDistanceToMove(delta, daggerSpeed);
             
             }
             else if (daggerThrown[i].direction == "down" && daggerThrown[i].type == "tp")
             {
               ctx.drawImage(daggerTpD,0,0,daggerImg.width,daggerImg.height, daggerThrown[i].x - scrollVal , daggerThrown[i].y - scrollValY, sizeDagger,sizeDagger);
-              daggerThrown[i].y += calcDistanceToMove(delta, 250);
+              daggerThrown[i].y += calcDistanceToMove(delta, daggerSpeed);
             
             }
              //on finit par verifier que les dague ne sont pas sortit du stage

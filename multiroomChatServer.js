@@ -17,7 +17,7 @@ var express=require('express');
       this.friction = 0.95;
       this.onGround = false;
       this.slowed = false;
-      this.ownSlow = false;
+      this.ownSlow = 0;
       this.crouching = false;
       this.ownTp = false;
     }
