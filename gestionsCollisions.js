@@ -197,11 +197,11 @@ function gestionsCollisions(x , y)
       //gestion des collision avec les monstres avec cercle de collision
       for (i = 0 ; i < tabMonster.length ; i++)
           {
-            //on pre-calcule les centre des hitbox des dagues
+            //on pre-calcule les centre des hitbox des monstre
             var HitBoxMX = tabMonster[i].x + 50 ;
             var HitBoxMY = tabMonster[i].y + 50 ; 
             var HitBoxMR = 33;
-            //visualisation de la hitbox de la dague
+            //visualisation de la hitbox des monstre
             /*
             ctx.beginPath();
             ctx.arc(HitBoxMX - scrollVal,HitBoxMY - scrollValY,HitBoxMR,0,2*Math.PI);
@@ -216,17 +216,29 @@ function gestionsCollisions(x , y)
                 if(monsters[socket.username].life >0) {monsters[socket.username].life-= 0.2;}
             }
           }
-          
-      //gestion des collision avec les boules de feu
-      for (i = 0 ; i < tabFire.length ; i++)
-      {
-          if ( x < tabFire[i].x  + tabFire[i].width &&
-              x + sizeCharacter > tabFire[i].x &&
-              y < tabFire[i].y + tabFire[i].height &&
-              sizeCharacter + y > tabFire[i].y )
-          {
-              if(monsters[socket.username].life >0) {monsters[socket.username].life-= 0.2;}
 
+          //gestion des collision avec les boules de feu
+          for (i = 0 ; i < tabFire.length ; i++)
+          {
+            //on pre-calcule les centre des hitbox des fireball
+            var HitBoxFX = tabFire[i].x + 50 ;
+            var HitBoxFY = tabFire[i].y + 50 ; 
+            var HitBoxFR = 33;
+            //visualisation de la hitbox des fireballs
+            /*
+            ctx.beginPath();
+            ctx.arc(HitBoxFX - scrollVal,HitBoxFY - scrollValY,HitBoxFR,0,2*Math.PI);
+            ctx.stroke();
+            */
+            var dx = (HitBoxX + HitBoxR) - (HitBoxFX+ HitBoxFR);
+            var dy = (HitBoxY + HitBoxR) - (HitBoxFY + HitBoxFR);
+            var distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < HitBoxR + HitBoxFR) 
+            {
+               if(monsters[socket.username].life >0) {monsters[socket.username].life-= 0.2;}
+            }
           }
-      }
+          
+
   }  

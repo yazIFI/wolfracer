@@ -2,17 +2,7 @@
  * Created by yazide on 06/03/2015.
  */
 
-
-var step = 0;
-
 var spriteY=0;
-
-var imgfire = new Image();
-
-imgfire.src = "fire.png";
-
-
-
 
 function monster2(ctx,x,y,life){
     this.ctx = ctx;
@@ -51,23 +41,24 @@ function fire(ctx,x,y) {
     this.width = 30;
     this.height = 70;
     this.tempY = this.y;
+    this.step = 0;
+    this.imgfire = new Image();
+    this.imgfire.src = "fire.png";
+}
 
 //faire apparaitre le feu (une boule qui se deplace a la verticale)
-    this.drawFire = function () {
-        this.ctx.drawImage(imgfire, 0, 0, this.width, this.height, this.x - scrollVal, this.y - scrollValY, 70, 140);
+    fire.prototype.drawFire = function () {
+        this.ctx.drawImage(this.imgfire, 0, 0, this.width, this.height, this.x - scrollVal, this.y - scrollValY, 70, 140);
         if (this.y < this.tempY) {
-            step = 100;
+            this.step = 100;
         }
         else if (this.y > this.tempY + 400) {
-            step = -100;
+            this.step = -100;
         }
-        if (step < 0) {
+        if (this.step < 0) {
             this.y--;
         }
         else {
             this.y++;
         }
-
-    }
-
-};
+    };
