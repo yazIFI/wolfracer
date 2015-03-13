@@ -278,6 +278,8 @@ var GF = function(){
           }
           //affichage du bonus 
           ctx.drawImage(daggerImg,0,0,daggerImg.width,daggerImg.height, 773 - scrollVal , 108 - scrollValY, sizeDagger,sizeDagger);
+           //affichage du bonus 
+          ctx.drawImage(daggerTpD,0,0,daggerImg.width,daggerImg.height, 716 - scrollVal , 844 - scrollValY, sizeDagger,sizeDagger);
          //console.log(daggerThrown.length);
           
           //Render des dague envoyé par les joueur.
@@ -366,54 +368,32 @@ var GF = function(){
         //lancer une dague recuperer au prealable
         if (inputStates.r)
         {
-          var dague;
+          
             if ( monsters[socket.username].ownSlow)
             {
-              //console.log("shot");
-              //on envoit la dague dans la direction indiquer par le clavier du joueur
-              if (inputStates.right)
-              {
-                dague = new dagger(monsters[socket.username].x + 250,monsters[socket.username].y,"right");
-                daggerThrown.push(dague);
-                socket.emit('new_dagger', dague);
-                //console.log("shot right");
-              }
-              else if (inputStates.left)
-              {
-                dague = new dagger(monsters[socket.username].x - 150,monsters[socket.username].y,"left") ; 
-                daggerThrown.push(dague);
-                 socket.emit('new_dagger',dague);
-              }
-              else if (inputStates.down)
-              {
-                dague = new dagger(monsters[socket.username].x,monsters[socket.username].y + 250,"down");
-                daggerThrown.push(dague);
-                 socket.emit('new_dagger',dague);
-              }
-              else if (inputStates.up)
-              {
-                dague = new dagger(monsters[socket.username].x,monsters[socket.username].y  - 150,"up");
-                daggerThrown.push(dague);
-                 socket.emit('new_dagger',dague);
-              }
-              //si aucune direction n'est indiqué on l'envoit du coté ou il regarde
-              else if (monsters[socket.username].side)
-              {
-                dague = new dagger(monsters[socket.username].x  + 250,monsters[socket.username].y,"right");
-                daggerThrown.push(dague);
-                 socket.emit('new_dagger',dague);
-              }
-              else 
-              {
-                dague = new dagger(monsters[socket.username].x - 150,monsters[socket.username].y,"left");
-                daggerThrown.push(dague);
-                 socket.emit('new_dagger',dague);
-              }
-              //le joueur n'a plus de dague de slow
-              monsters[socket.username].ownSlow = false;
+              addDagger("slow");
             }
         }
-
+        if (inputStates.t)
+        {
+         
+            if ( monsters[socket.username].ownTp)
+            {
+              addDagger("tp");
+            }
+        }
+        if (inputStates.y)
+        {
+          for (i = 0 ; i < daggerThrown.length ; i++)
+              {
+                if(daggerThrown[i].type=="tp")
+                {
+                  monsters[socket.username].x= daggerThrown[i].x ;
+                  monsters[socket.username].y= daggerThrown[i].y ;
+                  daggerThrown.splice(i,1);
+                }
+              }
+        }
         //LAISSER CE COMMENTAIRE(ajout d'element a la souris si il reste du temps)
         //if (inputStates.mousePos) { 
         //}
@@ -584,6 +564,14 @@ var GF = function(){
           {
             inputStates.r = true;
           }
+          else if(event.keyCode === 84)
+          {
+            inputStates.t = true;
+          }
+          else if(event.keyCode === 89)
+          {
+            inputStates.y = true;
+          }
       }, false);
 
       //if the key will be released, change the states object 
@@ -607,6 +595,14 @@ var GF = function(){
           else if(event.keyCode === 82)
           {
             inputStates.r = false;
+          }
+           else if(event.keyCode === 84)
+          {
+            inputStates.t = false;
+          }
+           else if(event.keyCode === 89)
+          {
+            inputStates.y = false;
           }
       }, false);
       /*

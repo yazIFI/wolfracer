@@ -19,6 +19,7 @@ var express=require('express');
       this.slowed = false;
       this.ownSlow = false;
       this.crouching = false;
+      this.ownTp = false;
     }
 var monsters = {};
 var daggerThrown = [];

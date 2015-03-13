@@ -16,6 +16,7 @@ function monster(){
       this.slowed = false;
       this.ownSlow = false;
       this.crouching = false;
+      this.ownTp = false;
     }
 
 var monsters ={};

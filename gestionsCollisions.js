@@ -18,12 +18,15 @@ function gestionsCollisions(x , y)
 		monsters[socket.username].x = 0;
 	}
   //on respawn en position de depart si l'on tombe hors map
-  if ( y > imgHeight)
+  if ( y  > imgHeight - 200)
   {
     monsters[socket.username].x=0;
     monsters[socket.username].y= 0;
   }
   
+
+
+
   //colision box
 
  //LAISSER CETTE PARTIE DE COMMENTAIRE (possible utilisation de spatial hash dans le futur en vu de meilleur performence )
@@ -79,27 +82,6 @@ function gestionsCollisions(x , y)
     monsters[socket.username].onground = false;
     
     
-    //On commence par checker les transversale que nous traiterons separement (collision box avec un axe particulier)
-    //rect 24
-    //2561 481 2851 787
-    //2587 454 2863 737 2821 765 2559 520
-    /*
-    var transversale = 
-    {
-      x1:2587,
-      y1:454,
-      x2:2863,
-      y2:737,
-      x3:2492,
-      y3:794
-    };
-    */ 
-     if (landingBoxX > 2561 && landingBoxX < 2851 && landingBoxY >481 && landingBoxY < 787 )
-    {
-      monsters[socket.username].onground = true;
-      monsters[socket.username].jump = false;
-    }
-
     //on check les collision box (possibilité d'implementer du quadtree ou spatial hash plus tard pour les perfs)
   if(level==1){ boxCollisionLevels=collisionsBox;}
    if(level==2){ boxCollisionLevels=collisionsBoxLevel2;}
@@ -144,6 +126,7 @@ function gestionsCollisions(x , y)
     }
 
     //on verifie si on a atteint un bonus(dagger)
+    //dague slow
    // ctx.fillRect( 773- scrollVal ,108 - scrollValY ,sizeDagger ,sizeDagger );
     if ( x < 773 + sizeDagger &&
    x + 100 > 773 &&
@@ -153,25 +136,24 @@ function gestionsCollisions(x , y)
       monsters[socket.username].ownSlow = true;
       //console.log(monsters[socket.username].ownSlow = true);
     }
+    //dague Tp
+    //ctx.fillRect( 716- scrollVal ,844 - scrollValY ,sizeDagger ,sizeDagger );
+    if ( x < 716 + sizeDagger &&
+   x + 100 > 716 &&
+   y < 844 + sizeDagger &&
+   100 + y > 844 )
+    {
+      monsters[socket.username].ownTp = true;
+      //console.log(monsters[socket.username].ownSlow = true);
+    }
 
-    //gestion des collision avec les dague( avec rectangle)
-    /*
-    for (i = 0 ; i < daggerThrown.length ; i++)
-          {
-            if ( x < daggerThrown[i].x  + sizeDagger &&
-           x + sizeCharacter > daggerThrown[i].x &&
-           y < daggerThrown[i].y + sizeDagger &&
-           sizeCharacter + y > daggerThrown[i].y )
-            {
-              monsters[socket.username].slowed = true;
-              //daggerThrown.splice(i,1);
-            }
-          }
-      */
+   
       //collision avec les dague usant de cercle
       for (i = 0 ; i < daggerThrown.length ; i++)
           {
-            //on pre-calcule les centre des hitbox des dagues
+            if(daggerThrown[i].type == "slow")
+            {
+               //on pre-calcule les centre des hitbox des dagues
             var HitBoxDX = daggerThrown[i].x + 50 ;
             var HitBoxDY = daggerThrown[i].y + 50 ; 
             var HitBoxDR = 33;
@@ -193,6 +175,19 @@ function gestionsCollisions(x , y)
                 timerSlow = 0;
                 socket.emit('delete_dagger', i);
             }
+
+            }
+            else  if(daggerThrown[i].type == "tp")
+               {
+                  //on observe si la dague tp est sortit du canvas et la detruit si c est le cas.
+                  if (daggerThrown[i].x -scrollVal + sizeDagger > canvasWidth || daggerThrown[i].y -scrollValY + sizeDagger > canvasHeight
+                  ||daggerThrown[i].x - scrollVal  < 0 || daggerThrown[i].y -scrollValY  < 0)
+                  {
+                    daggerThrown.splice(i,1);
+                  } 
+               }
+
+           
           }
       //gestion des collision avec les monstres avec cercle de collision
       for (i = 0 ; i < tabMonster.length ; i++)
