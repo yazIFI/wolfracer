@@ -20,8 +20,8 @@ function gestionsCollisions(x , y)
   //on respawn en position de depart si l'on tombe hors map
   if ( y  > imgHeight - 200)
   {
-    monsters[socket.username].x=0;
-    monsters[socket.username].y= 0;
+    monsters[socket.username].x=10;
+    monsters[socket.username].y= 10;
   }
   
 
@@ -53,24 +53,26 @@ function gestionsCollisions(x , y)
     //on recupere les position necessaire pour la landing box qui se trouve au pied du personnage
     var landingBoxX=x + tempX;
     var landingBoxY=y + tempY;
+    //ctx.fillStyle="#FF0000";
+    //ctx.fillRect(landingBoxX - scrollVal ,landingBoxY - scrollValY ,landingBoxW ,landingBoxH );
     //on pre-calcule les centre des hitbox du personnage
     if(monsters[socket.username].crouching)
     {
-    var HitBoxX = x + 100 ;
-    var HitBoxY = y + 150 ; 
-    var HitBoxR = 33;
+    var HitBoxX = x + centerX ;
+    var HitBoxY = y + centerY ; 
+    var HitBoxR = 16;
     }
     else
     {
-    var HitBoxX = x + 100 ;
-    var HitBoxY = y + 100 ; 
-    var HitBoxR = 33;
+    var HitBoxX = x + centerX ;
+    var HitBoxY = y + centerX ; 
+    var HitBoxR = 16;
     }
     //ajout future de plusieur hitbox pour avoir des collision avec le personnage plus precise
     //var headHitBoxX = x  ;
     //var headHitBoxY = y  ; 
     //LAISSER EN CAS DE DEBUG (visualisation de la hitbox)
-    ctx.fillStyle="#FF0000";
+    //ctx.fillStyle="#FF0000";
     //ctx.fillRect(x - scrollVal,y - scrollValY,sizeCharacter,sizeCharacter);
     //visualisation de la hitbox du joueur
     /*
@@ -89,7 +91,7 @@ function gestionsCollisions(x , y)
     for (i = 0 ; i < boxCollisionLevels.length ; i++)
    {
         //LAISSER EN CAS DE DEBUG (visualisation des boite de collision afin de verifier que les coordonné est bien etait entré)
-      //  ctx.fillRect(boxCollisionLevels[i].x - scrollVal ,boxCollisionLevels[i].y - scrollValY ,boxCollisionLevels[i].width ,boxCollisionLevels[i].height );
+        //ctx.fillRect(boxCollisionLevels[i].x - scrollVal ,boxCollisionLevels[i].y - scrollValY ,boxCollisionLevels[i].width ,boxCollisionLevels[i].height );
         // on recupere les vecteur pour pouvoir les comparer au demi hauteur et largeur afin de detecter les collision
         var vX = (landingBoxX + (landingBoxW / 2)) - (boxCollisionLevels[i].x + (boxCollisionLevels[i].width / 2));
         var vY = (landingBoxY + (landingBoxH / 2)) - (boxCollisionLevels[i].y + (boxCollisionLevels[i].height / 2));
@@ -106,9 +108,9 @@ function gestionsCollisions(x , y)
           {
             if (vY < 0) 
             {//cas ou le joueur entre en colision avec le haut d'une boite de collision , c a d arrive sur une plateforme
-              monsters[socket.username].y -= oY;
               monsters[socket.username].jump = false;
               monsters[socket.username].onground = true;
+              monsters[socket.username].y -= oY;
             }
           }
           else 
@@ -129,9 +131,9 @@ function gestionsCollisions(x , y)
     //dague slow
    // ctx.fillRect( 773- scrollVal ,108 - scrollValY ,sizeDagger ,sizeDagger );
     if ( x < 773 + sizeDagger &&
-   x + 100 > 773 &&
+   x + centerX > 773 &&
    y < 108 + sizeDagger &&
-   100 + y > 108 )
+   centerX + y > 108 )
     {
       monsters[socket.username].ownSlow = 5;
       //console.log(monsters[socket.username].ownSlow == true);
@@ -139,9 +141,9 @@ function gestionsCollisions(x , y)
     //dague Tp
     //ctx.fillRect( 716- scrollVal ,844 - scrollValY ,sizeDagger ,sizeDagger );
     if ( x < 716 + sizeDagger &&
-   x + 100 > 716 &&
+   x + centerX > 716 &&
    y < 844 + sizeDagger &&
-   100 + y > 844 )
+   centerX + y > 844 )
     {
       monsters[socket.username].ownTp = true;
       //console.log(monsters[socket.username].ownSlow == true);

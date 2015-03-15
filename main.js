@@ -416,13 +416,15 @@ var GF = function(){
      // monsters[socket.username].speedX *= monsters[socket.username].friction;
       
       //si on se situe au sol pas de graviter appliquer
+  // console.log(monsters[socket.username].speedY);
 
       if (monsters[socket.username].onground)
       {
         monsters[socket.username].speedY = 0;
       }
        // sinon on applique la gravité pour rabattre le joueur au sol
-      else
+       //on limite la vitesse en y afin de ne pas passer au travers des test de collision.
+          else if(monsters[socket.username].speedY < 2500)
       {
          monsters[socket.username].speedY += monsters[socket.username].gravity;
       }

@@ -9,7 +9,9 @@ scrollValY = 0 ;
 
 scrollImg.src = "mapS.png";
 //resize du personnage
-var sizeCharacter = 600 / 3 ;
+var sizeCharacter = 600 / 4 ;
+var centerX = sizeCharacter / 2;
+var centerY = sizeCharacter * 3 /4;
 //variable a utilise pour calculer la landing box:boite de collision servant à atterir sur les plateforme
 var tempX =(2/6) * sizeCharacter  ; 
 var tempY = (5/6) * sizeCharacter ; 
