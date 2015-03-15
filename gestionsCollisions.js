@@ -75,11 +75,11 @@ function gestionsCollisions(x , y)
     //ctx.fillStyle="#FF0000";
     //ctx.fillRect(x - scrollVal,y - scrollValY,sizeCharacter,sizeCharacter);
     //visualisation de la hitbox du joueur
-    /*
+    
     ctx.beginPath();
     ctx.arc(HitBoxX - scrollVal,HitBoxY - scrollValY,HitBoxR,0,2*Math.PI);
     ctx.stroke();
-    */
+    
     //on enleve le lock qui nous maintient au sol pour pouvoir tomber si l'on est plus sur notre plateforme
     monsters[socket.username].onground = false;
     
@@ -160,11 +160,11 @@ function gestionsCollisions(x , y)
             var HitBoxDY = daggerThrown[i].y + 50 ; 
             var HitBoxDR = 33;
             //visualisation de la hitbox de la dague
-            /*
+            
             ctx.beginPath();
             ctx.arc(HitBoxDX - scrollVal,HitBoxDY - scrollValY,HitBoxDR,0,2*Math.PI);
             ctx.stroke();
-            */
+            
             var dx = (HitBoxX + HitBoxR) - (HitBoxDX+ HitBoxDR);
             var dy = (HitBoxY + HitBoxR) - (HitBoxDY + HitBoxDR);
             var distance = Math.sqrt(dx * dx + dy * dy);
@@ -196,14 +196,14 @@ function gestionsCollisions(x , y)
           {
             //on pre-calcule les centre des hitbox des monstre
             var HitBoxMX = tabMonster[i].x + 50 ;
-            var HitBoxMY = tabMonster[i].y + 50 ; 
+            var HitBoxMY = tabMonster[i].y + 70 ; 
             var HitBoxMR = 33;
             //visualisation de la hitbox des monstre
-            /*
+            
             ctx.beginPath();
             ctx.arc(HitBoxMX - scrollVal,HitBoxMY - scrollValY,HitBoxMR,0,2*Math.PI);
             ctx.stroke();
-            */
+            
             var dx = (HitBoxX + HitBoxR) - (HitBoxMX+ HitBoxMR);
             var dy = (HitBoxY + HitBoxR) - (HitBoxMY + HitBoxMR);
             var distance = Math.sqrt(dx * dx + dy * dy);
@@ -218,15 +218,15 @@ function gestionsCollisions(x , y)
           for (i = 0 ; i < tabFire.length ; i++)
           {
             //on pre-calcule les centre des hitbox des fireball
-            var HitBoxFX = tabFire[i].x + 50 ;
-            var HitBoxFY = tabFire[i].y + 50 ; 
-            var HitBoxFR = 33;
+            var HitBoxFX = tabFire[i].x + 35 ;
+            var HitBoxFY = tabFire[i].y + 30 ; 
+            var HitBoxFR = 25;
             //visualisation de la hitbox des fireballs
-            /*
+            
             ctx.beginPath();
             ctx.arc(HitBoxFX - scrollVal,HitBoxFY - scrollValY,HitBoxFR,0,2*Math.PI);
             ctx.stroke();
-            */
+            
             var dx = (HitBoxX + HitBoxR) - (HitBoxFX+ HitBoxFR);
             var dy = (HitBoxY + HitBoxR) - (HitBoxFY + HitBoxFR);
             var distance = Math.sqrt(dx * dx + dy * dy);
