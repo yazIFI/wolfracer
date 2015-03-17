@@ -1,3 +1,5 @@
+var connected = false;
+
 function monster(){ 
       this.x=0;
       this.y=0;
@@ -23,6 +25,8 @@ var monsters ={};
 var daggerThrown = [];
 var tabMonster = [];
 var tabFire = [];
+var tabStar = [];
+var tabHealth = [];
 var level = 1;
 console.log(daggerThrown.length);
 var socket = io.connect();
@@ -33,6 +37,7 @@ var socket = io.connect();
 		socket.username = prompt("What's your name?");
 		socket.emit('adduser', socket.username);
 		//console.log(socket.username);
+		$('#name').append('<b>'+ socket.username);
 		
 		
 	});

@@ -14,22 +14,119 @@ Released under the MIT license: http://jsbin.mit-license.org
   <title>JS Bin</title>
 <style id="jsbin-css">
 canvas {
-  border: 1px solid black;
-}
-</style>
 
-<div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">
-	<b>ROOMS</b>
-	<div id="rooms"></div>
-</div>
-<div style="float:left;width:300px;height:250px;overflow:scroll-y;padding:10px;">
-	<div id="conversation"></div>
-	<input id="data" style="width:200px;" />
+  border: 2px solid blue;
+  margin-left:80px;
+  margin-top: 50px;
+  overflow:auto;
+}
+
+body {
+            background: #000033;
+            color : red;
+         }
+
+#rooms {
+float:right;
+background-color:blue;
+padding:5px;
+width:100px;
+border-right:1px 
+
+}
+#test {
+	background-color:green;
+	margin-left: 400px;
+	width:200px;
+	height:20px;
+}
+#conversation {
+	float:left;
+	background-color:#C0C0C0;
+	width:300px;
+	height:650px;
+	overflow:auto;
+}
+#data {
+	left:10px;
+	position: fixed;
+	width:200px;
+	height:20px;
+	bottom: 0px;
+}
+
+div#menu {
+	float:left;
+	width:250px;
+	height:700px;
+}
+
+#name {
+	float:left;
+	border: 1px solid green;
+	width:125px;
+	height: 50px;
+	background-color:#808080; 
+
+}
+#score {
+float:left;
+border: 1px solid green;
+background-color:#303030; 
+width:121px;
+height: 50px;
+
+}
+#datasend {
+	left:220px;
+	border : 1px solid red;
+	position: fixed;
+	width : 70px;
+	height : 70;
+	bottom: 0px;
+	background-color:#303030; 
+}
+
+
+
+	
+</style>
+<audio preload="auto" id="son">
+ 
+  <source src="run.ogg" type="audio/ogg">
+  	 <source src="jump.ogg" type="audio/ogg">
+</audio>
+
+<audio preload="auto" id="sonJump">
+ 
+  	<source src="jump.ogg" type="audio/ogg">
+</audio>
+
+<div id="menu">
+
+	<div id="name">name :</div>
+	<div id="score">score :</div>
+	<div id="conversation">
+	<input id="data"/>
 	<input type="button" id="datasend" value="send" />
+	</div>
 </div>
+
+<!--<div style="float:right;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">-->
+	
+	<div id="rooms"><b>ROOMS</b></div>
+	
+<!--</div>-->
+<!--<div style="float:left; position:absolute;bottom:1;width:100px;height:100px;overflow:scroll-y;padding:10px;">-->
+	
+	
+</div>
+
+
+<canvas id="myCanvas"  width="800" height="600"></canvas>
 </head>
 <body>
-  <canvas id="myCanvas"  width="800" height="600"></canvas>
+  
   <script src="/socket.io/socket.io.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 

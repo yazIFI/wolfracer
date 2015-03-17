@@ -236,6 +236,33 @@ function gestionsCollisions(x , y)
                if(monsters[socket.username].life >0) {monsters[socket.username].life-= 0.2;}
             }
           }
+
+
+          if(tabStar.length>bonusPosRandom){
+       if ( x < tabStar[bonusPosRandom].x  + tabStar[bonusPosRandom].width &&
+              x + sizeCharacter > tabStar[bonusPosRandom].x &&
+              y < tabStar[bonusPosRandom].y + tabStar[bonusPosRandom].height &&
+              sizeCharacter + y > tabStar[bonusPosRandom].y )
+          {
+            tabStar.splice(bonusPosRandom, 1);
+            for (i = 0 ; i < tabStar.length ; i++){console.log("length"+tabStar.length);}
+            bonusReached = true;
+          }
+      }
+       //gestion des collision avec les Health
+      for (i = 0 ; i < tabHealth.length ; i++)
+      {
+          if ( x < tabHealth[i].x  + tabHealth[i].width &&
+              x + sizeCharacter > tabHealth[i].x &&
+              y < tabHealth[i].y + tabHealth[i].height &&
+              sizeCharacter + y > tabHealth[i].y )
+          {
+             tabHealth[i].x=-1;
+            
+             
+
+          }
+      }
           
 
   }  

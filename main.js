@@ -1,5 +1,10 @@
 // Inits
  var timerThrow=0;
+ var imgArrowR = new Image();
+var imgArrowL = new Image();
+imgArrowR.src = "greenArrowR.png";
+imgArrowL.src = "greenArrowL.png";
+
 
 window.onload = function init() {
           var timerSlow=0;
@@ -11,7 +16,8 @@ window.onload = function init() {
 
  // vars for handling inputs
     var inputStates = {};
-
+    var bonusPosRandom = ~~(Math.random()*tabStar.length);
+    var bonusReached = false;
 // GAME FRAMEWORK STARTS HERE
 var GF = function(){
     // Vars relative to the canvas
@@ -139,8 +145,9 @@ var GF = function(){
        ctx.save();
          if(x>6160 && y > 900){
              level=2;
-             etatCourant = etats.gameOver;
+            // etatCourant = etats.gameOver;
              scrollImg.src = "mapLevel2.jpg";
+             init();
          }
        
        if (monsters[socket.username].crouching && monsters[socket.username].side)
@@ -205,6 +212,25 @@ var GF = function(){
     return delta;
     
   }
+
+  var init = function(){
+      tabMonster = [];
+      tabFire = [];
+      tabStar = [];
+      tabHealth = [];
+      tabMonster.push(new monster2(ctx,2500,900,0));
+      tabMonster.push(new monster2(ctx,3500,900,0));
+      tabFire.push(new fire(ctx,1000,300));
+      tabFire.push(new fire(ctx,2025,1000));
+      tabFire.push(new fire(ctx,3100,1000));
+      tabFire.push(new fire(ctx,5250,750));
+      tabStar.push(new Star(ctx,2550,750));
+      tabStar.push(new Star(ctx,4100,700));
+      tabStar.push(new Star(ctx,1700,850));
+      tabStar.push(new Star(ctx,5700,900));
+      tabHealth.push(new Health(ctx,3950,700));
+  }
+
     var mainLoop = function(time){
        // Clear the canvas
        //LAISSER CE COMMENTAIRE(peut se reveler necessaire plus tard pour des debug d'animation)
@@ -300,6 +326,29 @@ var GF = function(){
                 tabMonster[i].drawMonster();
             }
 
+            if(tabStar.length>0 && tabStar.length>bonusPosRandom){
+              if(tabStar[bonusPosRandom].drawStar()){}
+            
+              if(tabStar[bonusPosRandom].x > monsters[socket.username].x){
+                ctx.drawImage(imgArrowR, 0, 0, 120, 40, 500,200, 60, 30);
+              }
+              if(tabStar[bonusPosRandom].x < monsters[socket.username].x){
+                ctx.drawImage(imgArrowL, 0, 0, 120, 40, 500,200, 60, 30);
+              }
+            }
+            if(bonusReached){
+              bonusPosRandom = ~~(Math.random()*tabStar.length);
+              bonusReached=false;
+            
+              
+            }
+
+            //affichage des coeurs de santé
+            for(var i=0;i<tabHealth.length;i++) {
+                tabHealth[i].drawHealth();
+                
+            }
+
           if(inputStates.right || inputStates.left || inputStates.up || inputStates.down 
             || monsters[socket.username].jump || monsters[socket.username].onground == false 
             || (daggerThrown.length != 0))
@@ -343,6 +392,7 @@ var GF = function(){
         if (inputStates.left ) {
 			     //renderLeft()
 			     monsters[socket.username].speedX = -monsters[socket.username].speed;
+           $('#son')[0].play();
         }
         if (inputStates.up) {
           
@@ -351,6 +401,7 @@ var GF = function(){
        if (inputStates.right) {
 			     //renderRight();
             monsters[socket.username].speedX = monsters[socket.username].speed;
+            $('#son')[0].play();
         }
         if (inputStates.down && monsters[socket.username].onground && !monsters[socket.username].jump) {
             //monsters[socket.username].speedY = monsters[socket.username].speed;
@@ -368,6 +419,7 @@ var GF = function(){
               // la vitesse en y augmente (on décolle) 
               //l'axe des y etant inversé sur le canvas de js on doit bien ajouter un chiffre negatif.
               monsters[socket.username].speedY = -monsters[socket.username].speed * 5;
+              $('#sonJump')[0].play();
             }
         }
         //lancer une dague recuperer au prealable
@@ -532,11 +584,18 @@ var GF = function(){
   
     var start = function(){
 
-        tabMonster.push(new monster2(ctx,1200,900,0));
-       tabMonster.push(new monster2(ctx,4200,950,0));
-        tabFire.push(new fire(ctx,500,300));
-        tabFire.push(new fire(ctx,2200,200));
-        
+      tabMonster.push(new monster2(ctx,1200,900,0));
+      tabMonster.push(new monster2(ctx,4200,950,0));
+      tabFire.push(new fire(ctx,500,300));
+      tabFire.push(new fire(ctx,2200,200));
+      tabFire.push(new fire(ctx,500,300));
+      tabFire.push(new fire(ctx,2200,200));
+      tabStar.push(new Star(ctx,1350,80));
+      tabStar.push(new Star(ctx,5050,150));
+      tabStar.push(new Star(ctx,5747,650));
+      tabStar.push(new Star(ctx,6038,300));
+      tabHealth.push(new Health(ctx,2500,80));
+
         // adds a div for displaying the fps value
         fpsContainer = document.createElement('div');
         document.body.appendChild(fpsContainer);

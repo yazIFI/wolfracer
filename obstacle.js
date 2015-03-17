@@ -3,6 +3,11 @@
  */
 
 var spriteY=0;
+var imgHealth = new Image();
+var imgStar = new Image();
+imgHealth.src = "health.png"
+imgStar.src = "star.png"
+
 
 function monster2(ctx,x,y,life){
     this.ctx = ctx;
@@ -61,4 +66,32 @@ function fire(ctx,x,y) {
         else {
             this.y++;
         }
+
+};
+
+function Star(ctx,x,y) {
+    this.ctx = ctx;
+    this.x = x;
+    this.y = y;
+    this.width = 30;
+    this.height = 70;
+}
+
+    Star.prototype.drawStar = function () {
+        this.ctx.drawImage(imgStar, this.x - scrollVal, this.y - scrollValY, 40, 40);
+        
+    };
+
+
+function Health(ctx,x,y) {
+    this.ctx = ctx;
+    this.x = x;
+    this.y = y;
+    this.width = 40;
+    this.height = 40;
+
+}
+    Health.prototype.drawHealth = function () {
+        this.ctx.drawImage(imgHealth, this.x - scrollVal, this.y - scrollValY, this.width, this.height);
+        
     };
