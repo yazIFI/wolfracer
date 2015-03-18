@@ -349,9 +349,7 @@ var GF = function(){
                 
             }
 
-          if(inputStates.right || inputStates.left || inputStates.up || inputStates.down 
-            || monsters[socket.username].jump || monsters[socket.username].onground == false 
-            || (daggerThrown.length != 0))
+          if(monsters[socket.username].jump || monsters[socket.username].onground == false) 
           {
             socket.emit('receive_position', monsters[socket.username],socket.username);
           }
@@ -618,10 +616,13 @@ var GF = function(){
              inputStates.left = true;
           } else if (event.keyCode === 38) {
              inputStates.up = true;
+             socket.emit('receive_position', monsters[socket.username],socket.username);
           } else if (event.keyCode === 39) {
              inputStates.right = true;
+             socket.emit('receive_position', monsters[socket.username],socket.username);
           } else if (event.keyCode === 40) {
              inputStates.down = true;
+             socket.emit('receive_position', monsters[socket.username],socket.username);
           }  else if (event.keyCode === 32) {
              inputStates.space = true;
           }
