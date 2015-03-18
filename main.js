@@ -614,9 +614,9 @@ var GF = function(){
       window.addEventListener('keydown', function(event){
           if (event.keyCode === 37) {
              inputStates.left = true;
+              socket.emit('receive_position', monsters[socket.username],socket.username);
           } else if (event.keyCode === 38) {
              inputStates.up = true;
-             socket.emit('receive_position', monsters[socket.username],socket.username);
           } else if (event.keyCode === 39) {
              inputStates.right = true;
              socket.emit('receive_position', monsters[socket.username],socket.username);
@@ -625,6 +625,7 @@ var GF = function(){
              socket.emit('receive_position', monsters[socket.username],socket.username);
           }  else if (event.keyCode === 32) {
              inputStates.space = true;
+              socket.emit('receive_position', monsters[socket.username],socket.username);
           }
           else if(event.keyCode === 13)
           {
@@ -652,11 +653,14 @@ var GF = function(){
              inputStates.up = false;
           } else if (event.keyCode === 39) {
              inputStates.right = false;
+              socket.emit('receive_position', monsters[socket.username],socket.username);
           } else if (event.keyCode === 40) {
              inputStates.down = false;
              monsters[socket.username].crouching = false;
+              socket.emit('receive_position', monsters[socket.username],socket.username);
           } else if (event.keyCode === 32) {
              inputStates.space = false;
+              socket.emit('receive_position', monsters[socket.username],socket.username);
           }
            else if(event.keyCode === 13)
           {
