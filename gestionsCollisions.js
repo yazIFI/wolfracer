@@ -245,8 +245,8 @@ function gestionsCollisions(x , y)
               sizeCharacter + y > tabStar[bonusPosRandom].y )
           {
             tabStar.splice(bonusPosRandom, 1);
-            for (i = 0 ; i < tabStar.length ; i++){console.log("length"+tabStar.length);}
             bonusReached = true;
+            monsters[socket.username].score++;
           }
       }
        //gestion des collision avec les Health

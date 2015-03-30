@@ -6,6 +6,7 @@ var express=require('express');
       this.y=0;
       this.speed=500; // pixels/s this time !
       this.life=80;
+      this.score=0;
       this.boundingCircleRadius=70;
       this.jump=false;
       this.gravity=150;
@@ -20,6 +21,7 @@ var express=require('express');
       this.ownSlow = 0;
       this.crouching = false;
       this.ownTp = false;
+      this.level = 1;
     }
 var monsters = {};
 var daggerThrown = [];

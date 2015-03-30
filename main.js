@@ -140,15 +140,24 @@ var GF = function(){
      function drawMymonster(x, y,life) {
        // draw a big monsters[socket.username] !
        // head
-		
+		   $('#sonGame')[0].play();
        // save the context
        ctx.save();
-         if(x>6160 && y > 900){
-             level=2;
+         if(x>6160 && monsters[socket.username].level==1){
+             monsters[socket.username].level=2;
             // etatCourant = etats.gameOver;
-             scrollImg.src = "mapLevel2.jpg";
+            scrollImg.src = "mapLevel2.jpg";
              init();
+
          }
+
+         /*  if(monsters[socket.username].x>12250 && level==2){
+            
+            level=3;
+            // etatCourant = etats.gameOver;
+           // scrollImg.src = "mapLevel3.jpg";
+            
+        }*/
        
        if (monsters[socket.username].crouching && monsters[socket.username].side)
        {
@@ -213,7 +222,10 @@ var GF = function(){
     
   }
 
-  var init = function(){
+   var init = function(){
+
+      monsters[socket.username].x=0;
+
       tabMonster = [];
       tabFire = [];
       tabStar = [];
@@ -263,6 +275,8 @@ var GF = function(){
           break;
 
         case etats.jeuEnCours: 
+           if(monsters[socket.username].life<=0){monsters[socket.username].dead=true; 
+          window.location.href = "gameover.html";}
           //LAISSER CES COMMENTAIRE(debug)
           //clearCanvas();
           //map yeezid (niveau 2 ?)
@@ -303,7 +317,7 @@ var GF = function(){
             //on les anime tous sauf le joueur du client qui a eu lui meme son traitement specifique
             //LAISSER LE COMMENTAIRE(future amelioration des perfs possible en evitant de dessiner les character hors-cadre)
             //(encore bugguer)
-            if(user != socket.username) //&&  (monsters[user].x > scrollVal) && (monsters[user].x + 200 <  canvasWidth))
+            if(user != socket.username && monsters[user].level == monsters[socket.username].level) //&&  (monsters[user].x > scrollVal) && (monsters[user].x + 200 <  canvasWidth))
                {drawOthermonster(monsters[user]);}
              
           }
@@ -593,6 +607,17 @@ var GF = function(){
       tabStar.push(new Star(ctx,5747,650));
       tabStar.push(new Star(ctx,6038,300));
       tabHealth.push(new Health(ctx,2500,80));
+      tabMonster.push(new monster2(ctx,2500+6400,900,0));
+      tabMonster.push(new monster2(ctx,3500+6400+6400,900,0));
+      tabFire.push(new fire(ctx,1000+6400,300));
+      tabFire.push(new fire(ctx,2025+6400,1000));
+      tabFire.push(new fire(ctx,3100+6400,1000));
+      tabFire.push(new fire(ctx,5250+6400,750));
+      tabStar.push(new Star(ctx,2550+6400,750));
+      tabStar.push(new Star(ctx,4100+6400,700));
+      tabStar.push(new Star(ctx,1700+6400,850));
+      tabStar.push(new Star(ctx,5700+6400,900));
+      tabHealth.push(new Health(ctx,3950+6400,700));
 
         // adds a div for displaying the fps value
         fpsContainer = document.createElement('div');

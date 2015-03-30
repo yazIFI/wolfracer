@@ -15,36 +15,45 @@ Released under the MIT license: http://jsbin.mit-license.org
 <style id="jsbin-css">
 canvas {
 
-  border: 2px solid blue;
-  margin-left:80px;
-  margin-top: 50px;
+  border: 2px solid #888888 ;
+  margin-left:350px;
+  margin-top: 70px;
   overflow:auto;
 }
 
 body {
-            background: #000033;
-            color : red;
+            background: #101010;
+            color : green;
          }
 
 #rooms {
-float:right;
+float:left;
+position: fixed;
+top:110px;
+left:200px;
 background-color:blue;
-padding:5px;
-width:100px;
-border-right:1px 
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='black', endColorstr='black',GradientType=0);
+background-color: #2cbab5;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+border:1px solid black;
+display:inline-block;
+cursor:pointer;
+color:white;
+font-family:arial;
+font-size:15px;
+padding:9px 23px;
+text-decoration:none;
+text-shadow:0px 1px 0px black;
 
 }
-#test {
-	background-color:green;
-	margin-left: 400px;
-	width:200px;
-	height:20px;
-}
+
 #conversation {
 	float:left;
-	background-color:#C0C0C0;
+	background-color:#484848;
 	width:300px;
-	height:650px;
+	height:300px;
 	overflow:auto;
 }
 #data {
@@ -52,49 +61,77 @@ border-right:1px
 	position: fixed;
 	width:200px;
 	height:20px;
-	bottom: 0px;
+	top: 625px;
 }
 
-div#menu {
+div#menu1 {
+	position: fixed;
 	float:left;
-	width:250px;
-	height:700px;
+	top:350px;
+	width:300px;
+	height:300px;
+	border:1px solid blue;
+}
+
+div#menu2 {
+	position: fixed;
+	top:100px;
+	width:300px;
+	height:200px;
+	border:1px solid blue;
 }
 
 #name {
-	float:left;
-	border: 1px solid green;
+	float:left;	
+	border: 1px solid blue;
 	width:125px;
 	height: 50px;
-	background-color:#808080; 
 
 }
 #score {
 float:left;
-border: 1px solid green;
-background-color:#303030; 
+position: fixed;
+top:200px;
+border: 1px solid blue;
 width:121px;
 height: 50px;
 
 }
 #datasend {
-	left:220px;
-	border : 1px solid red;
+	left:215px;
+	border : 1px solid green;
 	position: fixed;
-	width : 70px;
-	height : 70;
-	bottom: 0px;
-	background-color:#303030; 
+	width : 90px;
+	height : 30px;
+	top: 622px; 
+	background-color: #2cbab5;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid black;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-family:arial;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px black;
+
+
 }
-
-
 
 	
 </style>
+<audio preload="auto" id="sonGame">
+ 
+  	<source src="welcome-to-persia.wav" type="audio/wav">
+</audio>
+
 <audio preload="auto" id="son">
  
   <source src="run.ogg" type="audio/ogg">
-  	 <source src="jump.ogg" type="audio/ogg">
+  	
 </audio>
 
 <audio preload="auto" id="sonJump">
@@ -102,19 +139,24 @@ height: 50px;
   	<source src="jump.ogg" type="audio/ogg">
 </audio>
 
-<div id="menu">
+<div id="menu1">
 
-	<div id="name">name :</div>
-	<div id="score">score :</div>
+
 	<div id="conversation">
 	<input id="data"/>
 	<input type="button" id="datasend" value="send" />
 	</div>
 </div>
 
-<!--<div style="float:right;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">-->
+<div id="menu2">
+
+	<div id="name">name :</div>
+	<div id="score">score :</div>
 	
+</div>
+<!--<div style="float:right;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">-->
 	<div id="rooms"><b>ROOMS</b></div>
+	
 	
 <!--</div>-->
 <!--<div style="float:left; position:absolute;bottom:1;width:100px;height:100px;overflow:scroll-y;padding:10px;">-->
@@ -132,6 +174,7 @@ height: 50px;
 
 <script src="collisionsBox.js"></script>
 <script src="collisionsBoxLevel2.js"></script>
+<script src="collisionsBoxLevel3.js"></script>
 <script src="scroll.js"></script>
 <script src="mainScroll.js"></script>
 <script src="dagger.js"></script>
