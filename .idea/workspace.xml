@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ea3e27e8-1328-4bde-8865-d865c3ef67f1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\ColorShift.psd" afterPath="$PROJECT_DIR$/image/ColorShift.psd" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\Tp.png" afterPath="$PROJECT_DIR$/image/Tp.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\ball.js" afterPath="$PROJECT_DIR$/script/ball.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\character.js" afterPath="$PROJECT_DIR$/script/character.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\chat.js" afterPath="$PROJECT_DIR$/script/chat.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\collisions.js" afterPath="$PROJECT_DIR$/script/collisions.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\collisionsBox.js" afterPath="$PROJECT_DIR$/script/collisionsBox.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\collisionsBoxLevel2.js" afterPath="$PROJECT_DIR$/script/collisionsBoxLevel2.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\colorstart.psd" afterPath="$PROJECT_DIR$/image/colorstart.psd" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\dagger.js" afterPath="$PROJECT_DIR$/script/dagger.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\dagger.psd" afterPath="$PROJECT_DIR$/image/dagger.psd" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\dog.psd" afterPath="$PROJECT_DIR$/image/dog.psd" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\dogFrame1.png" afterPath="$PROJECT_DIR$/image/dogFrame1.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\dogFrame2.png" afterPath="$PROJECT_DIR$/image/dogFrame2.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\dropL.png" afterPath="$PROJECT_DIR$/image/dropL.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\dropL2.png" afterPath="$PROJECT_DIR$/image/dropL2.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\dropR.png" afterPath="$PROJECT_DIR$/image/dropR.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\dropR2.png" afterPath="$PROJECT_DIR$/image/dropR2.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\fire.png" afterPath="$PROJECT_DIR$/image/fire.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\gameover.html" afterPath="$PROJECT_DIR$/html/gameover.html" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\gameover.png" afterPath="$PROJECT_DIR$/image/gameover.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\gestionsCollisions.js" afterPath="$PROJECT_DIR$/script/gestionsCollisions.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\greenArrowL.png" afterPath="$PROJECT_DIR$/image/greenArrowL.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\greenArrowR.png" afterPath="$PROJECT_DIR$/image/greenArrowR.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\health.png" afterPath="$PROJECT_DIR$/image/health.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\jsbin.fopomo.14.html" afterPath="$PROJECT_DIR$/html/jsbin.fopomo.14.html" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\jump.mp3" afterPath="$PROJECT_DIR$/song/jump.mp3" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\jump.ogg" afterPath="$PROJECT_DIR$/song/jump.ogg" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\leftSlow.png" afterPath="$PROJECT_DIR$/image/leftSlow.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\leftTp.png" afterPath="$PROJECT_DIR$/image/leftTp.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\main.js" afterPath="$PROJECT_DIR$/script/main.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\mainScroll.js" afterPath="$PROJECT_DIR$/script/mainScroll.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\map.png" afterPath="$PROJECT_DIR$/image/map.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\mapLevel2.jpg" afterPath="$PROJECT_DIR$/image/mapLevel2.jpg" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\mapLevel2.psd" afterPath="$PROJECT_DIR$/image/mapLevel2.psd" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\mapS.png" afterPath="$PROJECT_DIR$/image/mapS.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\mapS.psd" afterPath="$PROJECT_DIR$/image/mapS.psd" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\monster-lizard.png" afterPath="$PROJECT_DIR$/image/monster-lizard.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\multiroomChatServer.js" afterPath="$PROJECT_DIR$/script/multiroomChatServer.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\obstacle.js" afterPath="$PROJECT_DIR$/script/obstacle.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\other.jpg" afterPath="$PROJECT_DIR$/image/other.jpg" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\rightSlow.png" afterPath="$PROJECT_DIR$/image/rightSlow.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\rightTp.png" afterPath="$PROJECT_DIR$/image/rightTp.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\run.mp3" afterPath="$PROJECT_DIR$/song/run.mp3" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\run.ogg" afterPath="$PROJECT_DIR$/song/run.ogg" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\scroll.html" afterPath="$PROJECT_DIR$/html/scroll.html" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\scroll.js" afterPath="$PROJECT_DIR$/script/scroll.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\slow.png" afterPath="$PROJECT_DIR$/image/slow.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\snake.psd" afterPath="$PROJECT_DIR$/image/snake.psd" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\snakeL.png" afterPath="$PROJECT_DIR$/image/snakeL.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\snakeR.png" afterPath="$PROJECT_DIR$/image/snakeR.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\snakeframe1.png" afterPath="$PROJECT_DIR$/image/snakeframe1.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\snakeframe1L.png" afterPath="$PROJECT_DIR$/image/snakeframe1L.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\snakeframe2.png" afterPath="$PROJECT_DIR$/image/snakeframe2.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\snakeframe2L.png" afterPath="$PROJECT_DIR$/image/snakeframe2L.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\standingL.png" afterPath="$PROJECT_DIR$/image/standingL.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\standingL2.png" afterPath="$PROJECT_DIR$/image/standingL2.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\standingR.png" afterPath="$PROJECT_DIR$/image/standingR.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\standingR2.png" afterPath="$PROJECT_DIR$/image/standingR2.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\star.png" afterPath="$PROJECT_DIR$/image/star.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\timerUtils.js" afterPath="$PROJECT_DIR$/script/timerUtils.js" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\upSlow.png" afterPath="$PROJECT_DIR$/image/upSlow.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\upTp.png" afterPath="$PROJECT_DIR$/image/upTp.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\walkPrototype.png" afterPath="$PROJECT_DIR$/image/walkPrototype.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\walkingL.png" afterPath="$PROJECT_DIR$/image/walkingL.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\walkingL2.png" afterPath="$PROJECT_DIR$/image/walkingL2.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\walkingR.png" afterPath="$PROJECT_DIR$/image/walkingR.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\walkingR2.png" afterPath="$PROJECT_DIR$/image/walkingR2.png" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\welcome-to-persia.mp3" afterPath="$PROJECT_DIR$/song/welcome-to-persia.mp3" />
+      <change type="MOVED" beforePath="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\welcome-to-persia.wav" afterPath="$PROJECT_DIR$/song/welcome-to-persia.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+    </list>
+    <ignored path="wolfracer.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="wolfracer" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/multiroomChatServer.js" />
+        <option value="$PROJECT_DIR$/html/index.html" />
+        <option value="$PROJECT_DIR$/script/multiroomChatServer.js" />
+        <option value="$PROJECT_DIR$/script/character.js" />
+        <option value="$PROJECT_DIR$/script/dagger.js" />
+        <option value="$PROJECT_DIR$/script/obstacle.js" />
+        <option value="$PROJECT_DIR$/script/scroll.js" />
+        <option value="$PROJECT_DIR$/script/gestionsCollisions.js" />
+        <option value="$PROJECT_DIR$/script/main.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="776" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wolfracer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wolfracer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wolfracer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wolfracer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wolfracer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer" />
+      <recent name="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\html" />
+      <recent name="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\script" />
+      <recent name="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\song" />
+      <recent name="C:\Users\yazide\Desktop\M1_S2\Web_Science\wolfracer\image" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote">
+      <option name="name" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ea3e27e8-1328-4bde-8865-d865c3ef67f1" name="Default" comment="" />
+      <created>1428356281311</created>
+      <option name="number" value="Default" />
+      <updated>1428356281311</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298351" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.275" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/html/gameover.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7504078" vertical-offset="1002" max-vertical-offset="1615">
+          <caret line="86" column="61" selection-start-line="86" selection-start-column="61" selection-end-line="86" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/character.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.4827585" vertical-offset="23" max-vertical-offset="3774">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/collisions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9310346" vertical-offset="0" max-vertical-offset="578">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/collisionsBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6358">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/collisionsBoxLevel2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3689">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/dagger.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.3103447" vertical-offset="11" max-vertical-offset="3553">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/mainScroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1190">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/timerUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="0" column="41" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/scroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36515513" vertical-offset="0" max-vertical-offset="442">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/obstacle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.331565" vertical-offset="725" max-vertical-offset="1734">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-59.73077" vertical-offset="1354" max-vertical-offset="3315">
+          <caret line="171" column="24" selection-start-line="171" selection-start-column="24" selection-end-line="171" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1501" max-vertical-offset="11815">
+          <caret line="144" column="32" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
+          <folding>
+            <element signature="e#2069#2111#0" expanded="false" />
+            <element signature="e#2235#3207#0" expanded="false" />
+            <element signature="e#5796#5890#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/gestionsCollisions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4345048" vertical-offset="1224" max-vertical-offset="4641">
+          <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/multiroomChatServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5790297" vertical-offset="1672" max-vertical-offset="2397">
+          <caret line="39" column="15" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53208137" vertical-offset="0" max-vertical-offset="1530">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!block;n#monster#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

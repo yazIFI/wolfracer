@@ -2,8 +2,8 @@
  var timerThrow=0;
  var imgArrowR = new Image();
 var imgArrowL = new Image();
-imgArrowR.src = "greenArrowR.png";
-imgArrowL.src = "greenArrowL.png";
+imgArrowR.src = "../image/greenArrowR.png";
+imgArrowL.src = "../image/greenArrowL.png";
 
 
 window.onload = function init() {
@@ -30,7 +30,7 @@ var GF = function(){
     var etats = {
         menuPrincipal : 0,
         jeuEnCours : 1,
-        gameOver : 2,
+        gameOver : 2
     };
     var etatCourant = etats.menuPrincipal;
     
@@ -38,6 +38,7 @@ var GF = function(){
     var frameCount = 0;
     var lastTime;
     var fpsContainer;
+    var score;
     var fps; 
     // for time based animation
     var delta, oldTime = 0;
@@ -82,7 +83,7 @@ var GF = function(){
 
         //and display it in an element we appended to the 
         // document in the start() function
-       fpsContainer.innerHTML = 'FPS: ' + fps; 
+       fpsContainer.innerHTML = 'FPS: ' + fps;
        frameCount++;
     };
   
@@ -95,7 +96,7 @@ var GF = function(){
   
      // Functions for drawing the monsters[socket.username] and maybe other objects
      function drawOthermonster(m) {
-      ctx.save();
+         ctx.save();
        if (m.crouching && m.side)
        {
         characterDropR2.render(m.x,m.y,m.life);
@@ -140,13 +141,14 @@ var GF = function(){
      function drawMymonster(x, y,life) {
        // draw a big monsters[socket.username] !
        // head
-		   $('#sonGame')[0].play();
+       $('#sonGame')[0].play();
+       score.innerHTML = "_____ " + monsters[socket.username].score;
        // save the context
        ctx.save();
          if(x>6160 && monsters[socket.username].level==1){
              monsters[socket.username].level=2;
-            // etatCourant = etats.gameOver;
-            scrollImg.src = "mapLevel2.jpg";
+            // etatCourant = etats.gameOver;++
+            scrollImg.src = "../image/mapLevel2.jpg";
              init();
 
          }
@@ -155,7 +157,7 @@ var GF = function(){
             
             level=3;
             // etatCourant = etats.gameOver;
-           // scrollImg.src = "mapLevel3.jpg";
+           // scrollImg.src = "../image/mapLevel3.jpg";
             
         }*/
        
@@ -276,7 +278,7 @@ var GF = function(){
 
         case etats.jeuEnCours: 
            if(monsters[socket.username].life<=0){monsters[socket.username].dead=true; 
-          window.location.href = "gameover.html";}
+          window.location.href = "../html/gameover.html";}
           //LAISSER CES COMMENTAIRE(debug)
           //clearCanvas();
           //map yeezid (niveau 2 ?)
@@ -622,6 +624,10 @@ var GF = function(){
         // adds a div for displaying the fps value
         fpsContainer = document.createElement('div');
         document.body.appendChild(fpsContainer);
+
+        score = document.createElement('div');
+        score.setAttribute("id","score");
+        document.body.appendChild(score);
       
         // Canvas, context etc.
         //canvas = document.querySelector("#myCanvas");

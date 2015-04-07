@@ -85,8 +85,8 @@ function gestionsCollisions(x , y)
     
     
     //on check les collision box (possibilité d'implementer du quadtree ou spatial hash plus tard pour les perfs)
-  if(level==1){ boxCollisionLevels=collisionsBox;}
-   if(level==2){ boxCollisionLevels=collisionsBoxLevel2;}
+  if(monsters[socket.username].level==1){ boxCollisionLevels=collisionsBox;}
+   if(monsters[socket.username].level==2){ boxCollisionLevels=collisionsBoxLevel2;console.log('##########\n');}
     //on check les collision box (possibilité d'implementer du quadtree ou spatial hash plus tard pour les perfs)
     for (i = 0 ; i < boxCollisionLevels.length ; i++)
    {

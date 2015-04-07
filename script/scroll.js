@@ -7,7 +7,7 @@ scrollVal = 0;
 scrollValY = 0 ;
 //speed =1;
 
-scrollImg.src = "mapS.png";
+scrollImg.src = "../image/mapS.png";
 //resize du personnage
 var sizeCharacter = 600 / 4 ;
 var centerX = sizeCharacter / 2;

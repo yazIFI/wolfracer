@@ -5,32 +5,32 @@ var ctx = canvas.getContext("2d");
 //On créé des objet Image qui vont contenier les ressource graphique
 //p1 sprite
 var characterWalkingSprite = new Image();
-characterWalkingSprite.src = "walkingR.png";
+characterWalkingSprite.src = "../image/walkingR.png";
 var characterWalkingSpriteL = new Image();
-characterWalkingSpriteL.src = "walkingL.png";
+characterWalkingSpriteL.src = "../image/walkingL.png";
 var characterStandingSpriteR = new Image();
-characterStandingSpriteR.src = "standingR.png";
+characterStandingSpriteR.src = "../image/standingR.png";
 var characterStandingSpriteL = new Image();
-characterStandingSpriteL.src = "standingL.png";
+characterStandingSpriteL.src = "../image/standingL.png";
 var characterDropSpriteR = new Image();
-characterDropSpriteR.src = "dropR.png";
+characterDropSpriteR.src = "../image/dropR.png";
 var characterDropSpriteL = new Image();
-characterDropSpriteL.src = "dropL.png";
+characterDropSpriteL.src = "../image/dropL.png";
 
 //p2 sprite
 
 var characterWalkingSprite2 = new Image();
-characterWalkingSprite2.src = "walkingR2.png";
+characterWalkingSprite2.src = "../image/walkingR2.png";
 var characterWalkingSpriteL2 = new Image();
-characterWalkingSpriteL2.src = "walkingL2.png";
+characterWalkingSpriteL2.src = "../image/walkingL2.png";
 var characterStandingSpriteR2 = new Image();
-characterStandingSpriteR2.src = "standingR2.png";
+characterStandingSpriteR2.src = "../image/standingR2.png";
 var characterStandingSpriteL2 = new Image();
-characterStandingSpriteL2.src = "standingL2.png";
+characterStandingSpriteL2.src = "../image/standingL2.png";
 var characterDropSpriteR2 = new Image();
-characterDropSpriteR2.src = "dropR2.png";
+characterDropSpriteR2.src = "../image/dropR2.png";
 var characterDropSpriteL2 = new Image();
-characterDropSpriteL2.src = "dropL2.png";
+characterDropSpriteL2.src = "../image/dropL2.png";
 
 
 //l'objet sprite permettera à l'aide de 2 méthode update et render l'animation de nos ressource graphique

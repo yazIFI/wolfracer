@@ -5,8 +5,8 @@
 var spriteY=0;
 var imgHealth = new Image();
 var imgStar = new Image();
-imgHealth.src = "health.png"
-imgStar.src = "star.png"
+imgHealth.src = "../image/health.png"
+imgStar.src = "../image/star.png"
 
 
 function monster2(ctx,x,y,life){
@@ -22,7 +22,7 @@ function monster2(ctx,x,y,life){
     this.stepMonster=0;
     this.spriteX=0;
     this.imgMonster = new Image();
-    this.imgMonster.src = "snakeR.png";
+    this.imgMonster.src = "../image/snakeR.png";
     
 }
     monster2.prototype.drawMonster = function(){
@@ -31,8 +31,8 @@ function monster2(ctx,x,y,life){
         //console.log("tickCount : " + this.tickCount);
         this.ctx.drawImage(this.imgMonster,((this.spriteX % 2) * this.width),0,this.width, this.height,this.x -scrollVal, this.y - scrollValY, 200, 200);
         if(this.tickCount > this.ticksPerFrame){this.tickCount = 0 ;this.spriteX= this.spriteX + 1;}
-        if(this.x>this.tempX){this.stepMonster=-200;this.imgMonster.src = "snakeL.png";}
-        else if(this.x<this.tempX-300){this.stepMonster=200;this.imgMonster.src = "snakeR.png";}
+        if(this.x>this.tempX){this.stepMonster=-200;this.imgMonster.src = "../image/snakeL.png";}
+        else if(this.x<this.tempX-300){this.stepMonster=200;this.imgMonster.src = "../image/snakeR.png";}
         if(this.stepMonster<0){this.x-=5;}
         else{this.x+=5;}
         this.tickCount =this.tickCount + 1;
@@ -48,7 +48,7 @@ function fire(ctx,x,y) {
     this.tempY = this.y;
     this.step = 0;
     this.imgfire = new Image();
-    this.imgfire.src = "fire.png";
+    this.imgfire.src = "../image/fire.png";
 }
 
 //faire apparaitre le feu (une boule qui se deplace a la verticale)

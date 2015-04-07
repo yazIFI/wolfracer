@@ -29,6 +29,14 @@ var tabMonster = [];
 var tabFire = [];
 var level = 1;
 
+var PathS = __dirname;
+var PathTab = PathS.split("\\");
+PathS=PathTab[0];
+for(var i=1;i<PathTab.length-1;i++){
+    PathS+="/"+PathTab[i];
+}
+
+
 // Init globals variables for each module required
 var app = express()
   , http = require('http')
@@ -39,7 +47,7 @@ var app = express()
 server.listen(process.env.PORT ||8080);
 
 // Indicate where static files are located. Without this, no external js file, no css...  
-app.use(express.static(__dirname + '/'));    
+app.use(express.static(PathS+'/'));
 
 // routing with express, mapping for default page
 app.get('/', function (req, res) {

@@ -6,7 +6,7 @@ var daggerImg = new Image();
 // on stock les dague lancé
  //var daggerThrown = [];
 
-daggerImg.src = "slow.png";
+daggerImg.src = "../image/slow.png";
 
 daggerImg.onload = loadImageDagger;
 //on recupere la largeur et hauteur de l'img chargé
@@ -18,17 +18,17 @@ function loadImageDagger()
 var daggerLeft = new Image();
 
 
-daggerLeft.src = "leftSlow.png";
+daggerLeft.src = "../image/leftSlow.png";
 
 var daggerRight= new Image();
 
 
-daggerRight.src = "rightSlow.png";
+daggerRight.src = "../image/rightSlow.png";
 
 var daggerUp = new Image();
 
 
-daggerUp.src = "upSlow.png";
+daggerUp.src = "../image/upSlow.png";
 
 
 
@@ -38,22 +38,22 @@ daggerUp.src = "upSlow.png";
 
 var daggerTpU = new Image();
 
-daggerTpU.src = "upTp.png";
+daggerTpU.src = "../image/upTp.png";
 
 var daggerTpR = new Image();
 
 
-daggerTpR.src = "rightTp.png";
+daggerTpR.src = "../image/rightTp.png";
 
 var daggerTpL= new Image();
 
 
-daggerTpL.src = "leftTp.png";
+daggerTpL.src = "../image/leftTp.png";
 
 var daggerTpD = new Image();
 
 
-daggerTpD.src = "Tp.png";
+daggerTpD.src = "../image/Tp.png";
 
 //table de hash des img des dagues
 var hashImgDagger = {upslow:daggerUp, downslow:daggerImg, leftslow:daggerLeft, rightslow:daggerRight ,
