@@ -153,13 +153,13 @@ var GF = function(){
 
          }
 
-         /*  if(monsters[socket.username].x>12250 && level==2){
+           if(monsters[socket.username].x>12250 && level==2){
             
             level=3;
             // etatCourant = etats.gameOver;
            // scrollImg.src = "../image/mapLevel3.jpg";
             
-        }*/
+        }
        
        if (monsters[socket.username].crouching && monsters[socket.username].side)
        {
