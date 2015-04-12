@@ -85,8 +85,8 @@ function gestionsCollisions(x , y)
     
     
     //on check les collision box (possibilité d'implementer du quadtree ou spatial hash plus tard pour les perfs)
-  if(monsters[socket.username].level==1){ boxCollisionLevels=collisionsBox;}
-   if(monsters[socket.username].level==2){ boxCollisionLevels=collisionsBoxLevel2;console.log('##########\n');}
+  if(monsters[socket.username].level==1 || monsters[socket.username].level==3){ boxCollisionLevels=collisionsBox;}
+   if(monsters[socket.username].level==2){ boxCollisionLevels=collisionsBoxLevel2;}
     //on check les collision box (possibilité d'implementer du quadtree ou spatial hash plus tard pour les perfs)
     for (i = 0 ; i < boxCollisionLevels.length ; i++)
    {
@@ -194,24 +194,52 @@ function gestionsCollisions(x , y)
       //gestion des collision avec les monstres avec cercle de collision
       for (i = 0 ; i < tabMonster.length ; i++)
           {
-            //on pre-calcule les centre des hitbox des monstre
-            var HitBoxMX = tabMonster[i].x + 50 ;
-            var HitBoxMY = tabMonster[i].y + 70 ; 
-            var HitBoxMR = 33;
-            //visualisation de la hitbox des monstre
-            
-            ctx.beginPath();
-            ctx.arc(HitBoxMX - scrollVal,HitBoxMY - scrollValY,HitBoxMR,0,2*Math.PI);
-            ctx.stroke();
-            
-            var dx = (HitBoxX + HitBoxR) - (HitBoxMX+ HitBoxMR);
-            var dy = (HitBoxY + HitBoxR) - (HitBoxMY + HitBoxMR);
-            var distance = Math.sqrt(dx * dx + dy * dy);
+              //on pre-calcule les centre des hitbox des monstre
+              var HitBoxMX = tabMonster[i].x + 50 ;
+              var HitBoxMY = tabMonster[i].y + 70 ; 
+              var HitBoxMR = 33;
+              //visualisation de la hitbox des monstre
+              
+              ctx.beginPath();
+              ctx.arc(HitBoxMX - scrollVal,HitBoxMY - scrollValY,HitBoxMR,0,2*Math.PI);
+              ctx.stroke();
+              
+              var dx = (HitBoxX + HitBoxR) - (HitBoxMX+ HitBoxMR);
+              var dy = (HitBoxY + HitBoxR) - (HitBoxMY + HitBoxMR);
+              var distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < HitBoxR + HitBoxMR) 
-            {
-                if(monsters[socket.username].life >0) {monsters[socket.username].life-= 0.2;}
-            }
+              if (distance < HitBoxR + HitBoxMR) 
+              {
+                  if(monsters[socket.username].life >0) {
+                      monsters[socket.username].life-= 0.2;
+                      monsters[socket.username].x += monsters[socket.username].x - tabMonster[i].x;
+                  }
+              }
+
+              for(j = 0; j<daggerThrown.length ; j++)
+              {
+                //on pre-calcule les centre des hitbox des dagues
+                var HitBoxDX = daggerThrown[j].x + 50 ;
+                var HitBoxDY = daggerThrown[j].y + 50 ; 
+                var HitBoxDR = 33;
+
+                var dx2 = (HitBoxDX + HitBoxDR) - (HitBoxMX+ HitBoxMR);
+                var dy2 = (HitBoxDY + HitBoxDR) - (HitBoxMY + HitBoxMR);
+                var distance2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+
+                 if (distance2 < HitBoxDR + HitBoxMR) 
+                {
+                    console.log("___________________Monster touched__________________"+"\n");
+                    daggerThrown.splice(j,1);
+                    if(tabMonster[i].life==0){tabMonster.splice(i,1);}
+                    else{tabMonster[i].life-=1;}
+                    socket.emit('delete_dagger', j);
+                }
+              }
+
+
+
+
           }
 
           //gestion des collision avec les boules de feu
@@ -233,7 +261,10 @@ function gestionsCollisions(x , y)
 
             if (distance < HitBoxR + HitBoxFR) 
             {
-               if(monsters[socket.username].life >0) {monsters[socket.username].life-= 0.2;}
+               if(monsters[socket.username].life >0) {
+                   monsters[socket.username].life-= 0.2;
+
+               }
             }
           }
 

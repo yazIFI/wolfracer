@@ -38,6 +38,37 @@ function monster2(ctx,x,y,life){
         this.tickCount =this.tickCount + 1;
         
 };
+/*
+objet representant le dragon
+*/
+
+function monster3(ctx,x,y,life){
+    this.ctx = ctx;
+    this.x = x;
+    this.y = y;
+    this.life = life;
+    this.width = 96;
+    this.height = 91;
+    this.tempX=this.x;
+    this.tickCount = 0;
+    this.ticksPerFrame = 30;
+    this.stepMonster=0;
+    this.spriteX=0;
+    this.imgMonster = new Image();
+    this.imgMonster.src = "../image/dragon.png";
+}
+    monster3.prototype.drawMonster = function(){
+        
+        this.ctx.drawImage(this.imgMonster,((this.spriteX % 2) * this.width),100,this.width, this.height,this.x -scrollVal, this.y - scrollValY, 150, 150);
+        this.ctx.fillStyle="red";
+        this.ctx.fillRect(this.x - scrollVal + 50, this.y - scrollValY - 20, this.life*10,10);
+        if(this.tickCount > this.ticksPerFrame){this.tickCount = 0 ;this.spriteX= this.spriteX + 1;}
+        if(this.x>this.tempX){this.stepMonster=-200;}
+        else if(this.x<this.tempX-300){this.stepMonster=200;}
+        if(this.stepMonster<0){this.x-=2;}
+        else{this.x+=2;}
+        this.tickCount =this.tickCount + 1;
+};
 
 function fire(ctx,x,y) {
     this.ctx = ctx;

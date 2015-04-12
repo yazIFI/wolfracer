@@ -141,25 +141,34 @@ var GF = function(){
      function drawMymonster(x, y,life) {
        // draw a big monsters[socket.username] !
        // head
-       $('#sonGame')[0].play();
+      // $('#sonGame')[0].play();
        score.innerHTML = "_____ " + monsters[socket.username].score;
        // save the context
        ctx.save();
-         if(x>6160 && monsters[socket.username].level==1){
+         if(monsters[socket.username].x>6160 && monsters[socket.username].level==1){
              monsters[socket.username].level=2;
             // etatCourant = etats.gameOver;++
             scrollImg.src = "../image/mapLevel2.jpg";
-             init();
+            init();
 
          }
 
-           if(monsters[socket.username].x>12250 && level==2){
+           if(monsters[socket.username].x>6160 && monsters[socket.username].level==2){
             
-            level=3;
+             monsters[socket.username].level=3;
             // etatCourant = etats.gameOver;
-           // scrollImg.src = "../image/mapLevel3.jpg";
+            scrollImg.src = "../image/mapLevel3.jpg";
+            init();
             
-        }
+            }
+            if(monsters[socket.username].x>6160 && monsters[socket.username].level==3){
+            
+             monsters[socket.username].level=4;
+            // etatCourant = etats.gameOver;
+            scrollImg.src = "../image/mapLevel4.jpg";
+            init();
+            
+            }
        
        if (monsters[socket.username].crouching && monsters[socket.username].side)
        {
@@ -226,23 +235,69 @@ var GF = function(){
 
    var init = function(){
 
-      monsters[socket.username].x=0;
+     monsters[socket.username].x=0;
 
       tabMonster = [];
       tabFire = [];
       tabStar = [];
       tabHealth = [];
-      tabMonster.push(new monster2(ctx,2500,900,0));
-      tabMonster.push(new monster2(ctx,3500,900,0));
-      tabFire.push(new fire(ctx,1000,300));
-      tabFire.push(new fire(ctx,2025,1000));
-      tabFire.push(new fire(ctx,3100,1000));
-      tabFire.push(new fire(ctx,5250,750));
-      tabStar.push(new Star(ctx,2550,750));
-      tabStar.push(new Star(ctx,4100,700));
-      tabStar.push(new Star(ctx,1700,850));
-      tabStar.push(new Star(ctx,5700,900));
-      tabHealth.push(new Health(ctx,3950,700));
+      if(monsters[socket.username].level==1){
+        tabMonster.push(new monster2(ctx,1200,900,1));
+        tabMonster.push(new monster2(ctx,4200,950,1));
+        tabMonster.push(new monster3(ctx,6200,800,3));
+        tabFire.push(new fire(ctx,500,300));
+        tabFire.push(new fire(ctx,2200,200));
+        tabFire.push(new fire(ctx,500,300));
+        tabFire.push(new fire(ctx,2200,200));
+        tabStar.push(new Star(ctx,1350,80));
+        tabStar.push(new Star(ctx,5050,150));
+        tabStar.push(new Star(ctx,5747,650));
+        tabStar.push(new Star(ctx,6038,300));
+        tabHealth.push(new Health(ctx,2500,80));
+      }
+      if(monsters[socket.username].level==2){
+        tabMonster.push(new monster2(ctx,2500,900,1));
+        tabMonster.push(new monster2(ctx,3500,900,1));
+        tabMonster.push(new monster3(ctx,6200,950,3));
+        tabFire.push(new fire(ctx,1000,300));
+        tabFire.push(new fire(ctx,2025,1000));
+        tabFire.push(new fire(ctx,3100,1000));
+        tabFire.push(new fire(ctx,5250,750));
+        tabStar.push(new Star(ctx,2550,750));
+        tabStar.push(new Star(ctx,4100,700));
+        tabStar.push(new Star(ctx,1700,850));
+        tabStar.push(new Star(ctx,5700,900));
+        tabHealth.push(new Health(ctx,3950,700));
+      }
+
+      if(monsters[socket.username].level==3){
+         tabMonster.push(new monster2(ctx,1200,900,1));
+        tabMonster.push(new monster2(ctx,4200,950,1));
+        tabMonster.push(new monster3(ctx,6200,800,3));
+        tabFire.push(new fire(ctx,500,300));
+        tabFire.push(new fire(ctx,2200,200));
+        tabFire.push(new fire(ctx,500,300));
+        tabFire.push(new fire(ctx,2200,200));
+        tabStar.push(new Star(ctx,1350,80));
+        tabStar.push(new Star(ctx,5050,150));
+        tabStar.push(new Star(ctx,5747,650));
+        tabStar.push(new Star(ctx,6038,300));
+        tabHealth.push(new Health(ctx,2500,80));
+      }
+      if(monsters[socket.username].level==4){   
+         tabMonster.push(new monster2(ctx,1200,900,1));
+        tabMonster.push(new monster2(ctx,4200,950,1));
+        tabMonster.push(new monster3(ctx,5500,900,3));
+        tabFire.push(new fire(ctx,500,300));
+        tabFire.push(new fire(ctx,2200,200));
+        tabFire.push(new fire(ctx,500,300));
+        tabFire.push(new fire(ctx,2200,200));
+        tabStar.push(new Star(ctx,1350,80));
+        tabStar.push(new Star(ctx,5050,150));
+        tabStar.push(new Star(ctx,5747,650));
+        tabStar.push(new Star(ctx,6038,300));
+        tabHealth.push(new Health(ctx,2500,80));
+      }
   }
 
     var mainLoop = function(time){
@@ -597,29 +652,19 @@ var GF = function(){
 */
   
     var start = function(){
-
-      tabMonster.push(new monster2(ctx,1200,900,0));
-      tabMonster.push(new monster2(ctx,4200,950,0));
-      tabFire.push(new fire(ctx,500,300));
-      tabFire.push(new fire(ctx,2200,200));
-      tabFire.push(new fire(ctx,500,300));
-      tabFire.push(new fire(ctx,2200,200));
-      tabStar.push(new Star(ctx,1350,80));
-      tabStar.push(new Star(ctx,5050,150));
-      tabStar.push(new Star(ctx,5747,650));
-      tabStar.push(new Star(ctx,6038,300));
-      tabHealth.push(new Health(ctx,2500,80));
-      tabMonster.push(new monster2(ctx,2500+6400,900,0));
-      tabMonster.push(new monster2(ctx,3500+6400+6400,900,0));
-      tabFire.push(new fire(ctx,1000+6400,300));
-      tabFire.push(new fire(ctx,2025+6400,1000));
-      tabFire.push(new fire(ctx,3100+6400,1000));
-      tabFire.push(new fire(ctx,5250+6400,750));
-      tabStar.push(new Star(ctx,2550+6400,750));
-      tabStar.push(new Star(ctx,4100+6400,700));
-      tabStar.push(new Star(ctx,1700+6400,850));
-      tabStar.push(new Star(ctx,5700+6400,900));
-      tabHealth.push(new Health(ctx,3950+6400,700));
+        
+        tabMonster.push(new monster2(ctx,1200,900,1));
+        tabMonster.push(new monster2(ctx,4200,950,1));
+        tabMonster.push(new monster3(ctx,6200,800,3));
+        tabFire.push(new fire(ctx,500,300));
+        tabFire.push(new fire(ctx,2200,200));
+        tabFire.push(new fire(ctx,500,300));
+        tabFire.push(new fire(ctx,2200,200));
+        tabStar.push(new Star(ctx,1350,80));
+        tabStar.push(new Star(ctx,5050,150));
+        tabStar.push(new Star(ctx,5747,650));
+        tabStar.push(new Star(ctx,6038,300));
+        tabHealth.push(new Health(ctx,2500,80));
 
         // adds a div for displaying the fps value
         fpsContainer = document.createElement('div');
